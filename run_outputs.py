@@ -8,7 +8,7 @@ model_name = "CodeLlama-7b-Python-hf"
 temperatures = [0.5, 1.0, 2.0, 3.0, 4.0]
 
 print("loading dataset...")
-dataset = load_dataset("openai_humaneval")
+dataset = load_dataset("evalplus/humanevalplus")
 
 data = {}
 for t in temperatures:

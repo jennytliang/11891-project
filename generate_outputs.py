@@ -7,7 +7,7 @@ model_name = "CodeLlama-7b-Python-hf"
 temperature = 4.0
 
 print("loading dataset...")
-dataset = load_dataset("openai_humaneval")
+dataset = load_dataset("evalplus/humanevalplus")
 
 print("loading tokenizer...")
 model_hf_name = f"{model_user}/{model_name}"

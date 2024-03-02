@@ -5,9 +5,6 @@ import re
 with open('./data/CodeLlama-7b-Python-hf/r1_results.json', 'r') as file:
     data = json.load(file)
 
-with open('./data/CodeLlama-7b-Python-hf/test.json', 'r') as file:
-    error_data = json.load(file)
-
 # Function to calculate percentage of problems with 1 passing test case
 def calculate_pass_at_10(data):
     for temperature, problems in data.items():
@@ -92,4 +89,6 @@ def calculate_error_stats(error_data):
                         errors[um] += 1
     print(errors)
 
-calculate_error_stats(error_data)
+calculate_pass_at_10(data)
+calculate_percentage_pass(data)
+calculate_error_stats(data)
