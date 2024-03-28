@@ -4,7 +4,7 @@ from datasets import load_dataset
 
 model_user = "codellama"
 model_name = "CodeLlama-13b-Python-hf"
-temperature = 3.0
+temperature = 4.0
 
 print("loading dataset...")
 dataset = load_dataset("evalplus/humanevalplus")
