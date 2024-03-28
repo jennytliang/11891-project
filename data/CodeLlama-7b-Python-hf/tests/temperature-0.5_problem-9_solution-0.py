@@ -7,12 +7,9 @@ def rolling_max(numbers: List[int]) -> List[int]:
     >>> rolling_max([1, 2, 3, 2, 3, 4, 2])
     [1, 2, 3, 3, 3, 4, 4]
     """
-    max_so_far: List[int] = []
-    for number in numbers:
-        if not max_so_far or number >= max_so_far[-1]:
-            max_so_far.append(number)
-        else:
-            max_so_far.append(max_so_far[-1])
+    max_so_far = [numbers[0]]
+    for i in range(1, len(numbers)):
+        max_so_far.append(max(max_so_far[i - 1], numbers[i]))
     return max_so_far
 
 
