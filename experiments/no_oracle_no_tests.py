@@ -31,7 +31,7 @@ for t in temperatures:
             except: # Do nothing on error
                 pass
             else:
-                test_file_path = f"./data/{model_name}/tests/temperature-{t}_problem-{i}_solution-{j}.py"
+                test_file_path = f"./experiments/out/{model_name}/tests/temperature-{t}_problem-{i}_solution-{j}.py"
                 test_file = open(test_file_path, "w")
                 test_file.write(code + "\n\n" + test + "\n\n" + f"check({entry_point})")
                 test_file.close()
@@ -54,4 +54,4 @@ for t in temperatures:
                         data[str(t)][f"problem-{i}"].append(process.stderr)
 
 print("writing to file...")
-json.dump(data, open(f"./data/{model_name}/test.json", "w"))
+json.dump(data, open(f"./experiments/out/{model_name}/no_oracles_no_tests.json", "w"))
