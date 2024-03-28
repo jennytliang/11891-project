@@ -11,7 +11,7 @@ def mean_absolute_deviation(numbers: List[float]) -> float:
     1.0
     """
     mean = sum(numbers) / len(numbers)
-    return sum([abs(x - mean) for x in numbers]) / len(numbers)
+    return sum(abs(number - mean) for number in numbers) / len(numbers)
 
 
 if __name__ == "__main__":

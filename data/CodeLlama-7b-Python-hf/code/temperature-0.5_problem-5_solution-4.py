@@ -9,16 +9,8 @@ def intersperse(numbers: List[int], delimeter: int) -> List[int]:
     [1, 4, 2, 4, 3]
     """
     result = []
-    for i in range(len(numbers)):
-        if i == len(numbers) - 1:
-            result.append(numbers[i])
-        else:
-            result.append(numbers[i])
-            result.append(delimeter)
+    for i in range(len(numbers) - 1):
+        result.append(numbers[i])
+        result.append(delimeter)
+    result.append(numbers[-1])
     return result
-
-
-if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
