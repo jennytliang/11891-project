@@ -6,4 +6,4 @@
 
 cd /home/jtliang/interactive-constrained-decoding/11891-project
 module load cuda-12.1
-python3 3_run_outputs.py 
+python3 3_run_outputs.py

@@ -42,13 +42,16 @@ for t in temperatures:
                 command = ["python3", test_file_path]
 
                 # Execute the command
-                process = subprocess.run(command, capture_output=True, text=True)
-
-                # Check if the script was executed successfully
-                if process.returncode == 0:
-                    data[str(t)][f"problem-{i}"].append(1)
+                try:
+                    process = subprocess.run(command, capture_output=True, text=True, timeout=120)
+                except Exception as e:
+                    data[str(t)][f"problem-{i}"].append(e)
                 else:
-                    data[str(t)][f"problem-{i}"].append(process.stderr)
+                    # Check if the script was executed successfully
+                    if process.returncode == 0:
+                        data[str(t)][f"problem-{i}"].append(1)
+                    else:
+                        data[str(t)][f"problem-{i}"].append(process.stderr)
 
 print("writing to file...")
 json.dump(data, open(f"./data/{model_name}/test.json", "w"))
