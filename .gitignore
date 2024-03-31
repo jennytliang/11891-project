@@ -1,3 +1,4 @@
 *.out
 *.err
 duplicated_code/
+__pycache__/
