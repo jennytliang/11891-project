@@ -52,7 +52,6 @@ def run(logger, args):
                         constraint_text = None
                         if len(constraints) > 0:
                             constraint_to_use = constraints[0]
-                            logger.info(constraint_to_use)
                             constraint_text = get_constraint_text(constraint_to_use, code_tokens, solution_tokens)
                             
                             second_quote_end_index = get_second_quote_end_index(code)
@@ -60,12 +59,11 @@ def run(logger, args):
                             if second_quote_end_index < constraint_to_use[1]: # If the constraint starts before the first shared span
                                 text_to_keep = code[second_quote_end_index:constraint_to_use[1]]
 
-                        if constraint_text != None:
+                        if constraint_text != None: # Should be None if the constraint is not valid
                             logger.info("tokenizing...")
                             closing_quotes = "\"\"\"" if "\"\"\"" in prompt else "'''"
 
                             updated_code = prompt[:-4] + "\n" + constraint_text + f"\t{closing_quotes}\n" + text_to_keep
-                            logger.info(updated_code)
 
                             input_ids = tokenizer(updated_code, return_tensors="pt").to("cuda")
 
@@ -166,7 +164,7 @@ def main():
         run(logger, args)
     elif args.action == "test":
         logger = get_logger("INFO", "starting test for 2_yes_oracle_no_tests.py")
-        test(args)
+        test(logger, args)
  
 if __name__ == "__main__":
     # calling the main function

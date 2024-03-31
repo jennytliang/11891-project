@@ -31,9 +31,8 @@ def get_second_quote_end_index(code):
     
     return code.index(quote, first_quotes_index + 1) + len(quote) # Return the location of the second quote
 
-
 def clean_tokens(tokens):
-    return [t.strip("▁") for t in tokens if t != "<0x0A>"]
+    return [t.strip("▁") for t in tokens if t != "<0x0A>" and t != "<0x09>"]
 
 def get_constraint_text(constraint, generated_solution_tokens, reference_solution_tokens):
     tag, i1, i2, j1, j2 = constraint
@@ -42,18 +41,30 @@ def get_constraint_text(constraint, generated_solution_tokens, reference_solutio
     i2 = i2 if abs(i2 - i1) < 10 else i1 + 10
     j2 = j2 if abs(j2 - j1) < 10 else j1 + 10
 
-    clean_generated_solution_tokens = clean_tokens(generated_solution_tokens)[i1:i2]
-    clean_reference_solution_tokens = clean_tokens(reference_solution_tokens)[j1:j2]
+    clean_generated_solution_tokens = clean_tokens(generated_solution_tokens[i1:i2])
+    clean_reference_solution_tokens = clean_tokens(reference_solution_tokens[j1:j2])
 
-    # Deduplicate the tokens
-    new_generated_solution_tokens = [t for t in clean_generated_solution_tokens if t not in clean_reference_solution_tokens]
-    new_reference_solution_tokens = [t for t in clean_reference_solution_tokens if t not in clean_generated_solution_tokens]
+    # Return empty string if there are no constraint tokens to enforce
+    inclusion_constraint_text = ""
+    exclusion_constraint_text = ""
 
     if tag == "insert":
-        return "\tInclude these tokens in the code: " + " ".join(new_generated_solution_tokens) + "\n"
+        if len(clean_reference_solution_tokens) > 0:
+            inclusion_constraint_text = "\tInclude these tokens in the code: " + " ".join(clean_reference_solution_tokens) + "\n"
+        return inclusion_constraint_text
     elif tag == "delete":
-        return "\tDo not include these tokens in the code: " + " ".join(new_reference_solution_tokens)+ "\n"
+        if len(clean_generated_solution_tokens) > 0:
+            exclusion_constraint_text = "\tDo not include these tokens in the code: " + " ".join(clean_generated_solution_tokens)+ "\n"
+        return exclusion_constraint_text
     elif tag == "replace":
-        return "\tInclude these tokens in the code: " + " ".join(new_generated_solution_tokens) + "\n" + "\tDo not include these tokens in the code: " + " ".join(new_reference_solution_tokens)+ "\n"
+        # Deduplicate the tokens
+        deduplicated_generated_solution_tokens = [t for t in clean_generated_solution_tokens if t not in clean_reference_solution_tokens]
 
-    return None
+        if len(clean_reference_solution_tokens) > 0:
+            inclusion_constraint_text = "\tInclude these tokens in the code: " + " ".join(clean_reference_solution_tokens) + "\n"
+        if len(deduplicated_generated_solution_tokens) > 0:
+            exclusion_constraint_text = "\tDo not include these tokens in the code: " + " ".join(deduplicated_generated_solution_tokens)+ "\n"
+
+        return inclusion_constraint_text + exclusion_constraint_text
+
+    return None # Not a valid tag, return None
