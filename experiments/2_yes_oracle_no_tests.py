@@ -1,7 +1,7 @@
 # pip install accelerate
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM, QuantoConfig
-from utils import get_logger, get_constraints, get_constraint_text
+from utils import get_logger, get_constraints, get_constraint_text, get_second_quote_end_index
 import argparse
 import subprocess
 import json
@@ -52,17 +52,22 @@ def run(logger, args):
                         constraint_text = None
                         if len(constraints) > 0:
                             constraint_to_use = constraints[0]
+                            logger.info(constraint_to_use)
                             constraint_text = get_constraint_text(constraint_to_use, code_tokens, solution_tokens)
-                            text_to_keep = code[0:constraint_to_use[1]]
+                            
+                            second_quote_end_index = get_second_quote_end_index(code)
+                            text_to_keep = ""
+                            if second_quote_end_index < constraint_to_use[1]: # If the constraint starts before the first shared span
+                                text_to_keep = code[second_quote_end_index:constraint_to_use[1]]
 
                         if constraint_text != None:
                             logger.info("tokenizing...")
-                            input_ids = tokenizer(
-                                prompt[:-4] + "\n" +
-                                    constraint_text + "\t\"\"\"\n" +
-                                    text_to_keep,
-                                    return_tensors="pt"
-                                ).to("cuda")
+                            closing_quotes = "\"\"\"" if "\"\"\"" in prompt else "'''"
+
+                            updated_code = prompt[:-4] + "\n" + constraint_text + f"\t{closing_quotes}\n" + text_to_keep
+                            logger.info(updated_code)
+
+                            input_ids = tokenizer(updated_code, return_tensors="pt").to("cuda")
 
                             logger.info("generating outputs...")
                             outputs = model.generate(

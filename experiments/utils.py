@@ -25,6 +25,13 @@ def get_constraints(s1_tokens, s2_tokens):
 
     return diffs
 
+def get_second_quote_end_index(code):
+    quote = "\"\"\"" if "\"\"\"" in code else "'''"
+    first_quotes_index = code.index(quote)
+    
+    return code.index(quote, first_quotes_index + 1) + len(quote) # Return the location of the second quote
+
+
 def clean_tokens(tokens):
     return [t.strip("▁") for t in tokens if t != "<0x0A>"]
 
