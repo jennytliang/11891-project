@@ -39,27 +39,31 @@ def run(logger, args):
                 try:
                     code_file_path = f"{input_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py"
                     code_file = open(code_file_path, "r")
-                    code = code_file.read()
+                    full_code = code_file.read()
                     code_file.close()
+
+                    # Trim away everything past the specification, which could include constraints/things not related to code
+                    second_quote_end_index = get_second_quote_end_index(full_code)
+                    code = full_code[second_quote_end_index:]
                 except: # Do nothing on error
                     pass
                 else:
                     if code != full_solution:
                         code_tokens = tokenizer.tokenize(code)
-                        solution_tokens = tokenizer.tokenize(full_solution)
+                        solution_tokens = tokenizer.tokenize(example["canonical_solution"].lstrip())
                         constraints = get_constraints(code_tokens, solution_tokens)
 
                         constraint_text = None
                         if len(constraints) > 0:
                             constraint_to_use = constraints[0]
-                            constraint_text = get_constraint_text(constraint_to_use, code_tokens, solution_tokens)
+                            constraint_text = get_constraint_text(constraint_to_use, code_tokens, solution_tokens, logger)
 
                             # Find the next available constraint if the current constraint returns nothing
                             index = 1
                             logger.info(constraint_to_use)
                             while constraint_text == "" and index < len(constraints):
                                 constraint_to_use = constraints[index]
-                                constraint_text = get_constraint_text(constraint_to_use, code_tokens, solution_tokens)
+                                constraint_text = get_constraint_text(constraint_to_use, code_tokens, solution_tokens, logger)
                                 index += 1
                             logger.info(constraint_to_use)
                             logger.info(constraint_text)
@@ -70,10 +74,9 @@ def run(logger, args):
                             temp_code = tokenizer.decode(tokenizer.convert_tokens_to_ids(solution_tokens[0:solution_constraint_start_index]))
                             logger.info(temp_code)
                             
-                            assert(len(temp_code) <= len(full_solution)) # temp_code should always be a subset of code
+                            assert(len(temp_code) <= len(example["canonical_solution"])) # temp_code should always be a subset of the canonical solution
 
-                            second_quote_end_index = get_second_quote_end_index(code)
-                            text_to_keep = code[second_quote_end_index:len(temp_code)]
+                            text_to_keep = code[0:len(temp_code)]
                             logger.info(text_to_keep)
 
                         if constraint_text != None: # Should be None if the constraint is not valid
