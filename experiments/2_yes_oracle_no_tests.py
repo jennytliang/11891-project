@@ -70,7 +70,7 @@ def run(logger, args):
                             temp_code = tokenizer.decode(tokenizer.convert_tokens_to_ids(solution_tokens[0:solution_constraint_start_index]))
                             logger.info(temp_code)
                             
-                            assert(len(temp_code) <= len(code)) # temp_code should always be a subset of code
+                            assert(len(temp_code) <= len(full_solution)) # temp_code should always be a subset of code
 
                             second_quote_end_index = get_second_quote_end_index(code)
                             text_to_keep = code[second_quote_end_index:len(temp_code)]
