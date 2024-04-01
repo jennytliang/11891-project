@@ -1,0 +1,45 @@
+def eat(number, need, remaining):
+    """
+    You're a hungry rabbit, and you already have eaten a certain number of carrots,
+    but now you need to eat more carrots to complete the day's meals.
+    you should return an array of [ total number of eaten carrots after your meals,
+                                    the number of carrots left after your meals ]
+    if there are not enough remaining carrots, you will eat all remaining carrots, but will still be hungry.
+    
+    Example:
+    * eat(5, 6, 10) -> [11, 4]
+    * eat(4, 8, 9) -> [12, 1]
+    * eat(1, 10, 10) -> [11, 0]
+    * eat(2, 11, 5) -> [7, 0]
+    
+    Variables:
+    @number : integer
+        the number of carrots that you have eaten.
+    @need : integer
+        the number of carrots that you need to eat.
+    @remaining : integer
+        the number of remaining carrots thet exist in stock
+    
+    Constrain:
+    * 0 <= number <= 1000
+    * 0 <= need <= 1000
+    * 0 <= remaining <= 1000
+
+    Have fun :)
+    
+	Include these tokens in the code: need <= remaining
+	Do not include these tokens in the code: number + <
+	"""
+
+    if n == 0:
+        return [0, 0]
+    if n >= need:
+        return [n + r, 0]
+    else:
+        return [n + r, r - (need - n)]
+
+
+# Please do not remove the "if _name_ == '_main_'" part of the code
+if __name__ == '__main__':
+    n, need, r = eval(input())
+    print(eat(n, need, r))
