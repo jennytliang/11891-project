@@ -8,7 +8,7 @@ import json
 
 model_user = "codellama"
 model_name = "CodeLlama-7b-Python-hf"
-temperatures = [0.5, 1.0, 2.0, 3.0, 4.0]
+temperatures = [0.5]
 num_rounds = 1
 
 def run(logger, args):
@@ -32,7 +32,7 @@ def run(logger, args):
 
         for i in range(start_index, end_index):
             example = dataset["test"][i]
-            prompt = example["prompt"]
+            prompt = example["prompt"].lstrip()
             full_solution = prompt + example["canonical_solution"]
 
             for j in range(10):
@@ -53,21 +53,36 @@ def run(logger, args):
                         if len(constraints) > 0:
                             constraint_to_use = constraints[0]
                             constraint_text = get_constraint_text(constraint_to_use, code_tokens, solution_tokens)
+
+                            # Find the next available constraint if the current constraint returns nothing
+                            index = 1
+                            logger.info(constraint_to_use)
+                            while constraint_text == "" and index < len(constraints):
+                                constraint_to_use = constraints[index]
+                                constraint_text = get_constraint_text(constraint_to_use, code_tokens, solution_tokens)
+                                index += 1
+                            logger.info(constraint_to_use)
+                            logger.info(constraint_text)
                             
+                            # Identify tokens to keep
+                            solution_constraint_start_index = constraint_to_use[3] # Index of the constraint in solution_tokens
+                            logger.info(solution_tokens[0:solution_constraint_start_index])
+                            temp_code = tokenizer.decode(tokenizer.convert_tokens_to_ids(solution_tokens[0:solution_constraint_start_index]))
+                            logger.info(temp_code)
+                            
+                            assert(len(temp_code) <= len(code)) # temp_code should always be a subset of code
+
                             second_quote_end_index = get_second_quote_end_index(code)
-                            text_to_keep = ""
-                            if second_quote_end_index < constraint_to_use[1]: # If the constraint starts before the first shared span
-                                text_to_keep = code[second_quote_end_index:constraint_to_use[1]]
+                            text_to_keep = code[second_quote_end_index:len(temp_code)]
+                            logger.info(text_to_keep)
 
                         if constraint_text != None: # Should be None if the constraint is not valid
-                            logger.info("tokenizing...")
                             closing_quotes = "\"\"\"" if "\"\"\"" in prompt else "'''"
 
                             updated_code = prompt[:-4] + "\n" + constraint_text + f"\t{closing_quotes}\n" + text_to_keep
 
                             input_ids = tokenizer(updated_code, return_tensors="pt").to("cuda")
 
-                            logger.info("generating outputs...")
                             outputs = model.generate(
                                 **input_ids,
                                 max_new_tokens=500,
