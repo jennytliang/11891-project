@@ -1,0 +1,18 @@
+def starts_one_ends(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start or end with 1.
+    """
+    if isinstance(n, int):
+        raise TypeError
+    if n < 1:
+        raise ZeroDivisionError
+    return 45**n-2500
+
+
+def main():
+    num = '368'
+
+    while len(num) < 4:
+        num = input('Enter the number > ')
+        for i in [i for i in range(10)]:
