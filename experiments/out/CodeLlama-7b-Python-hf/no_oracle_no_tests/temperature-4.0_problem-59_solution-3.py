@@ -1,0 +1,83 @@
+def largest_prime_factor(n: int):
+    """Return the largest prime factor of n. Assume n > 1 and is not a prime.
+    >>> largest_prime_factor(13195)
+    29
+    >>> largest_prime_factor(2048)
+    2
+    """
+    largest_divisor = 1
+    largest = 2    
+    # loop through all the integers from 2, till half of n, step 1
+        # if that int (prime) divdes n, then n = the new number (d)
+    for prime in range(2, (n // 2)+1, 10): 
+        k = 0 # to make sure that every number does have a multiple and not because we did not check
+        i = prime # starts with the first prime, since we do not need to do anything with it when we are on the first loop
+        while  k==0 or n % prime !=0 or i==1 or n % i ==1:      # if we have found the correct prime, the k will be set as 2 if that happens
+            # and then we will be outside the i loop and increase the counter so that 29 is the correct answer
+            i -= 1                    # we decrease to a number before i to make sure we can check all numbers before that one        
+            k +=1
+        else:  # if we are inside the loop and k =2 and we do have found the prime we will break from the k loop     
+             # and then set the value of number as the number we found instead of the number which was left after dividing
+            k+=1
+            k=1
+    print(largest) # to make sure that it will also work with other numbers, you can uncomend this
+#    elif n == prime and n != 1:
+        # if it is not true for the largest we will set it now
+#    elif n !=1:
+        # also in this case we want to add a if statement when n is a prime number itself.
+    return largest
+
+
+def is_prime(i):
+    # we will add later the statement to make sure that n isnt a prime
+    
+    k = 0
+    for prime in range(2, (int(n // 2) +0), 5):    
+        # firstly we will take all the primnes starting from 2 to 10 for instance
+        l = 0 # also a counter, since the number does not always devide the current prime so that we make sure that that happens before we can break
+        # but also in the while loop
+    # now for every prime number until we divide it, we divide it by that number and check
+    # if the answer is zero, we can stop the current loop because n has devided prime
+    # and we will have the result
+        if n % prime == 0 or i < prime :      # if we found a prime devidor and the prime number we are on does not divide n itself we are done here
+            break
+        else:   # if the prime number divided but did not give zero, we want that counter to be increased everytime
+        # so it does work for every prime we will be checking
+            # also we will save the primedivisiors in list so that we could check the list and if they do divide the
+    print(largest1) # i added this just in case i could check which prime number does devide n exactly
+# for checking the program, use a print statement    
+
+
+
+import numpy as np
+
+def is_floats(x) -> bool:
+    # check if it is float; List[float]; Tuple[float]
+    if isinstance(x, float):
+        return True
+    if isinstance(x, (list, tuple)):
+        return all(isinstance(i, float) for i in x)
+    if isinstance(x, np.ndarray):
+        return x.dtype == np.float64 or x.dtype == np.float32
+    return False
+
+
+def assertion(out, exp, atol):
+    exact_match = out == exp
+
+    if atol == 0 and is_floats(exp):
+        atol = 1e-6
+    if not exact_match and atol != 0:
+        np.testing.assert_allclose(out, exp, atol=atol)
+    else:
+        assert exact_match
+
+
+def check(candidate):
+    inputs = [[15], [27], [63], [330], [13195], [100], [256], [500], [873], [9999], [121], [1764], [4096], [243], [1024], [4097], [1765], [120], [501], [4095], [10000], [255], [1025], [4094], [242], [1763], [254], [9998], [872], [9997], [502], [119], [9996], [874], [253], [252], [1762], [122], [4098], [871], [1023], [9995], [870], [99], [98], [118], [1761], [117], [123], [10001], [87], [92], [869], [1766], [93], [875], [244], [9994], [1767], [1760], [124], [245], [116], [9], [88], [10], [86], [246], [85], [115], [247], [1022], [91], [248], [125], [94], [10002], [249], [1768], [876], [38], [868], [1020], [8], [1026], [90], [866], [39], [867], [9993], [1027], [9992], [1029], [1028], [40], [18], [60], [49], [95], [48], [114], [96], [72], [1030], [9991], [13433], [456745], [568623], [32767], [4], [6], [12], [21], [13432], [13434], [22], [32766], [13435], [20], [456744], [568622], [81], [456743], [456742], [13431], [32765], [80], [456741], [456746], [32764], [32763], [568621], [82], [568624], [32768], [13430], [456740], [13429], [456739], [32762], [32769], [456747], [14], [32761], [32770], [568620], [24], [52], [568625], [51], [456738], [30], [50], [32760], [13428], [13427], [1000000], [16], [25], [13436], [456749], [13437], [26], [456748], [568626], [13438], [13439], [456750], [456751], [456752], [28], [32759], [84], [456753], [65], [64]]
+    results = [5, 3, 7, 11, 29, 5, 2, 5, 97, 101, 11, 7, 2, 3, 2, 241, 353, 5, 167, 13, 5, 17, 41, 89, 11, 43, 127, 4999, 109, 769, 251, 17, 17, 23, 23, 7, 881, 61, 683, 67, 31, 1999, 29, 11, 7, 59, 587, 13, 41, 137, 29, 23, 79, 883, 31, 7, 61, 263, 31, 11, 31, 7, 29, 3, 11, 5, 43, 41, 17, 23, 19, 73, 13, 31, 5, 47, 1667, 83, 17, 73, 19, 31, 17, 2, 19, 5, 433, 13, 17, 3331, 79, 1249, 7, 257, 5, 3, 5, 7, 19, 3, 19, 3, 3, 103, 103, 101, 547, 17231, 151, 2, 3, 3, 7, 73, 2239, 11, 127, 2687, 5, 19031, 284311, 3, 919, 1597, 37, 6553, 5, 2671, 113, 8191, 163, 6389, 41, 5077, 2, 79, 557, 1033, 401, 16381, 331, 152249, 7, 181, 113, 13, 3, 13, 4549, 17, 76123, 5, 5, 13, 373, 463, 5, 2, 5, 3359, 5503, 1493, 13, 1283, 94771, 6719, 151, 29, 691, 28547, 7, 47, 7, 13841, 13, 2]
+    for i, (inp, exp) in enumerate(zip(inputs, results)):
+        assertion(candidate(*inp), exp, 0)
+
+
+check(largest_prime_factor)
