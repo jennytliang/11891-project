@@ -89,7 +89,7 @@ def run(logger, args):
                         outputs = model.generate(
                             **input_ids,
                             max_new_tokens=500,
-                            temperature=t,
+                            temperature=0.5,
                             # Do greedy decoding
                             do_sample=True,
                             num_beams=1

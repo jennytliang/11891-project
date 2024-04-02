@@ -5,9 +5,6 @@ import argparse
 import subprocess
 import json
 
-model_user = "codellama"
-model_name = "CodeLlama-7b-Python-hf"
-
 def test(logger, args):
     t = args.temperature
     logger.info(t)
@@ -37,6 +34,8 @@ def test(logger, args):
                 test_file = open(test_file_path, "w")
                 test_file.write(code + "\n\n" + test + "\n\n" + f"check({entry_point})")
                 test_file.close()
+
+                logger.info(test_file_path)
 
                 # Build the command to run the Python script
                 # Assumes that 'python' is the command to run your Python interpreter
