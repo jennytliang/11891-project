@@ -1,0 +1,20 @@
+def solve(N):
+    """Given a positive integer N, return the total sum of its digits in binary.
+    
+    Example
+        For N = 1000, the sum of digits will be 1 the output should be "1".
+        For N = 150, the sum of digits will be 6 the output should be "110".
+        For N = 147, the sum of digits will be 12 the output should be "1100".
+    
+    Variables:
+        @N integer
+             Constraints: 0 ≤ N ≤ 10000.
+    Output:
+         a string of binary number
+    
+	Include these tokens in the code: s = sum ( map ( lambda x : int
+	"""
+    return bin(int(str(N).replace('0b','').replace('0','').replace('1','').replace('2','').replace('3','').replace('4','').replace('5','').replace('6','').replace('7','').replace('8','').replace('9',''), 2)))[2:]
+
+
+print(solve(1000))
