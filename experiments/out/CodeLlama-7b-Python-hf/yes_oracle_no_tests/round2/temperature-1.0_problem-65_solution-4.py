@@ -1,0 +1,69 @@
+def circular_shift(x, shift):
+    """Circular shift the digits of the integer x, shift the digits right by shift
+    and return the result as a string.
+    If shift > number of digits, return digits reversed.
+    >>> circular_shift(12, 1)
+    "21"
+    >>> circular_shift(12, 2)
+    "12"
+    
+	Include these tokens in the code: shift % = len ( s ) if
+	"""
+
+    s = str(x)
+    if shift > len(s):
+        returnt = s[::-1]
+    else:
+        returnt = s[shift:] + s[:shift]
+    return returnt
+
+
+def circular_shift1(x, shift):
+    """Circular shift the digits of the integer x, shift the digits right by shift
+    and return the result as a string.
+    If shift > number of digits, return digits reversed.
+    >>> circular_shift(12, 1)
+    "21"
+    >>> circular_shift(12, 2)
+    "12"
+    """
+    s = str(x)
+    returnt = s[shift:] + s[:shift]
+    return returnt
+
+
+def circular_shift2(x, shift):
+    """Circular shift the digits of the integer x, shift the digits right by shift
+    and return the result as a string.
+    If shift > number of digits, return digits reversed.
+    >>> circular_shift(12, 1)
+    "21"
+    >>> circular_shift(12, 2)
+    "12"
+    """
+    s = str(x)
+    returnt = s[shift % len(s):] + s[:shift % len(s)]
+    return returnt
+
+
+def circular_shift3(x, shift):
+    """Circular shift the digits of the integer x, shift the digits right by shift
+    and return the result as a string.
+    If shift > number of digits, return digits reversed.
+    >>> circular_shift(12, 1)
+    "21"
+    >>> circular_shift(12, 2)
+    "12"
+    """
+    s = str(x)
+    returnt = s[-shift:] + s[:-shift]
+    return returnt
+
+
+def circular_shift4(x, shift):
+    """Circular shift the digits of the integer x, shift the digits right by shift
+    and return the result as a string.
+    If shift > number of digits, return digits reversed.
+    >>> circular_shift(12, 1)
+    "21"
+    >>> circular
