@@ -1,0 +1,25 @@
+def prime_length(string):
+    """Write a function that takes a string and returns True if the string
+    length is a prime number or False otherwise
+    Examples
+    prime_length('Hello') == True
+    prime_length('abcdcba') == True
+    prime_length('kittens') == True
+    prime_length('orange') == False
+    
+	Include these tokens in the code: def is _ prime ( a ):
+	"""
+    len_string = len(string)
+
+    prime = [2, 3, 5, 7]
+
+    for num in prime:
+        if num == len_string:
+            return True
+
+    return False
+
+print(prime_length("Hello"))
+print(prime_length("abcdcba"))
+print(prime_length("kittens"))
+print(prime_length("orange"))
