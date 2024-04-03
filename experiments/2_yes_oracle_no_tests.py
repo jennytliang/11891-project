@@ -8,8 +8,6 @@ import json
 
 model_user = "codellama"
 model_name = "CodeLlama-7b-Python-hf"
-temperatures = [0.5]
-num_rounds = 1
 
 def run(logger, args):
     start_index, end_index = args.indicies
