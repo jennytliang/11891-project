@@ -1,0 +1,16 @@
+{
+    "AssertionError": 457,
+    "ValueError": 25,
+    "NameError": 31,
+    "SyntaxError": 112,
+    "IndexError": 17,
+    "AttributeError": 3,
+    "EOFError": 6,
+    "NotImplementedError": 1,
+    "TypeError": 19,
+    "UnboundLocalError": 3,
+    "IndentationError": 12,
+    "MemoryError": 1,
+    "TabError": 7,
+    "RecursionError": 1
+}

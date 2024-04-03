@@ -1,0 +1,18 @@
+{
+    "NotImplementedError": 3,
+    "AssertionError": 541,
+    "NameError": 46,
+    "SyntaxError": 145,
+    "IndexError": 30,
+    "TypeError": 20,
+    "EOFError": 12,
+    "RecursionError": 4,
+    "ValueError": 30,
+    "IndentationError": 24,
+    "AttributeError": 4,
+    "TabError": 6,
+    "ZeroDivisionError": 2,
+    "ImportError": 1,
+    "KeyError": 1,
+    "FileNotFoundError": 1
+}

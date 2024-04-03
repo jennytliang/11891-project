@@ -1,0 +1,9 @@
+{
+    "AssertionError": 635,
+    "IndexError": 15,
+    "EOFError": 6,
+    "ValueError": 45,
+    "SyntaxError": 45,
+    "TypeError": 17,
+    "NameError": 3
+}

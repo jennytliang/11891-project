@@ -1,0 +1,18 @@
+{
+    "AssertionError": 834,
+    "IndentationError": 18,
+    "EOFError": 12,
+    "SyntaxError": 207,
+    "IndexError": 17,
+    "ValueError": 36,
+    "RecursionError": 8,
+    "NotImplementedError": 2,
+    "NameError": 30,
+    "TabError": 8,
+    "KeyError": 3,
+    "TypeError": 27,
+    "AttributeError": 10,
+    "ModuleNotFoundError": 1,
+    "FileNotFoundError": 1,
+    "UnboundLocalError": 1
+}

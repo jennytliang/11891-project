@@ -1,0 +1,15 @@
+{
+    "AttributeError": 23,
+    "AssertionError": 987,
+    "IndentationError": 34,
+    "TypeError": 42,
+    "RecursionError": 4,
+    "ValueError": 47,
+    "SyntaxError": 19,
+    "IndexError": 23,
+    "EOFError": 16,
+    "UnboundLocalError": 20,
+    "ModuleNotFoundError": 3,
+    "ZeroDivisionError": 9,
+    "NameError": 24
+}

@@ -1,0 +1,11 @@
+{
+    "AssertionError": 417,
+    "NameError": 2,
+    "IndexError": 15,
+    "EOFError": 4,
+    "TypeError": 25,
+    "ValueError": 33,
+    "SyntaxError": 14,
+    "ZeroDivisionError": 1,
+    "AttributeError": 3
+}
