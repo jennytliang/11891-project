@@ -1,0 +1,26 @@
+def prod_signs(arr):
+    """
+    You are given an array arr of integers and you need to return
+    sum of magnitudes of integers multiplied by product of all signs
+    of each number in the array, represented by 1, -1 or 0.
+    Note: return None for empty arr.
+
+    Example:
+    >>> prod_signs([1, 2, 2, -4]) == -9
+    >>> prod_signs([0, 1]) == 0
+    >>> prod_signs([]) == None
+    
+	Do not include these tokens in the code: not
+	"""
+
+  if not arr:
+    return None
+
+  return sum(
+    [sum([int(i) for i in str(a)]) * (-1 if a < 0 else 1) for a in arr]
+  ) * (-1 if arr[0] < 0 else 1)
+
+
+print(prod_signs([1, 2, 2, -4]))
+print(prod_signs([0, 1]))
+print(prod_signs([]))

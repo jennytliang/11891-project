@@ -1,0 +1,48 @@
+def decimal_to_binary(decimal):
+    """You will be given a number in decimal form and your task is to convert it to
+    binary format. The function should return a string, with each character representing a binary
+    number. Each character in the string will be '0' or '1'.
+
+    There will be an extra couple of characters 'db' at the beginning and at the end of the string.
+    The extra characters are there to help with the format.
+
+    Examples:
+    decimal_to_binary(15)   # returns "db1111db"
+    decimal_to_binary(32)   # returns "db100000db"
+    
+	Include these tokens in the code: bin
+	Do not include these tokens in the code: str (
+	"""
+
+    return "db" + str(bin(decimal))[2:] + "db"
+
+
+def decimal_to_hex(decimal):
+    """You will be given a number in decimal form and your task is to convert it to
+    hexadecimal format. The function should return a string, with each character representing a hexadecimal
+    number. Each character in the string will be between 0 and 9, or an uppercase letter from A to F.
+
+    There will be an extra couple of characters 'hx' at the beginning and at the end of the string.
+    The extra characters are there to help with the format.
+
+    Examples:
+    decimal_to_hex(255)   # returns "hxffdb"
+    decimal_to_hex(15)    # returns "hx000000000000000000000000000000000000000000000000000000000000000fdb"
+    decimal_to_hex(32)    # returns "hx0000000000000000000000000000000000000000000000000000000000000010db"
+    
+	Include these tokens in the code: hex
+	Do not include these tokens in the code: str (
+	"""
+
+    return "hx" + str(hex(decimal))[2:] + "db"
+
+
+def decimal_to_octal(decimal):
+    """You will be given a number in decimal form and your task is to convert it to
+    octal format. The function should return a string, with each character representing an octal number.
+    Each character in the string will be between 0 and 7.
+
+    There will be an extra couple of characters 'oc' at the beginning and at the end of the string.
+    The extra characters are there to help with the format.
+
+    Ex

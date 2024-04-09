@@ -1,0 +1,34 @@
+def x_or_y(n, x, y):
+    """A simple program which should return the value of x if n is 
+    a prime number and should return the value of y otherwise.
+
+    Examples:
+    for x_or_y(7, 34, 12) == 34
+    for x_or_y(15, 8, 5) == 5
+    
+    
+	Include these tokens in the code: def is _ prime ( a ):
+	Do not include these tokens in the code: if n % 2 == 0 or
+	"""
+    answer = 0
+    if is_prime(n):
+        answer = x
+    else:
+        answer = y
+    return answer
+
+
+def is_prime(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+
+
+# Write your code below this line
+
+
+# Do not write any code above this line
+if __name__ == '__main__':
+    print(x_or_y(7, 34, 12))
+    print(x_or_y(15, 8, 5))
