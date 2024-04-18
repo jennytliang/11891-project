@@ -1,33 +1,35 @@
 # pip install accelerate
+from vllm import LLM, SamplingParams
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModelForCausalLM, QuantoConfig
+from transformers import AutoTokenizer
 from utils import get_logger, get_constraints, get_constraint_text, get_second_quote_end_index
 import argparse
 import subprocess
 import json
 
-model_user = "codellama"
-model_name = "CodeLlama-7b-Python-hf"
-
 def run(logger, args):
     start_index, end_index = args.indicies
     input_folder_path, output_folder_path = args.folderpaths
     t = args.temperature
+    model_hf_name = args.model
     logger.info(f"start index: {start_index}, end index: {end_index}")
 
     logger.info("loading dataset...")
     dataset = load_dataset("evalplus/humanevalplus")
 
     logger.info("loading tokenizer...")
-    model_hf_name = f"{model_user}/{model_name}"
     tokenizer = AutoTokenizer.from_pretrained(model_hf_name)
 
-    logger.info("loading quantized model...")
-    quantization_config = QuantoConfig(weights="int8")
-    model = AutoModelForCausalLM.from_pretrained(model_hf_name, device_map="auto", quantization_config=quantization_config)
+    logger.info("loading model...")
+    model = LLM(
+        model=model_hf_name,
+        tensor_parallel_size=args.ngpus,
+    )
 
     logger.info(f"computing temperature {t}...")
 
+    prefixes = []
+    indicies = []
     for i in range(start_index, end_index):
         example = dataset["test"][i]
         prompt = example["prompt"].lstrip()
@@ -82,24 +84,21 @@ def run(logger, args):
 
                         updated_code = prompt[:-4] + "\n" + constraint_text + f"\t{closing_quotes}\n" + text_to_keep
 
-                        input_ids = tokenizer(updated_code, return_tensors="pt").to("cuda")
+                        prefixes.append(updated_code)
+                        indicies.append(i, j)
 
-                        outputs = model.generate(
-                            **input_ids,
-                            max_new_tokens=500,
-                            temperature=0.5,
-                            # Do greedy decoding
-                            do_sample=True,
-                            num_beams=1
-                        )
+                    sampling_params = SamplingParams(temperature=0.5, max_tokens=500)
+                    outputs = model.generate(prefixes, sampling_params)
+                    generated_texts = [output.outputs[0].text for output in outputs]
 
-                        decoded_output = tokenizer.decode(outputs[0]).replace("<s>", "").replace("</s>", "").lstrip()
-                        
-                        f = open(f"{output_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py", "w")
-                        f.write(decoded_output)
-                        f.close()
+    for (i, j), text in zip(generated_texts):
+        text = text.replace("<s>", "").replace("</s>", "").lstrip()
+        
+        f = open(f"{output_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py", "w")
+        f.write(text)
+        f.close()
 
-                        logger.info(f"{output_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py")
+        logger.info(f"{output_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py")
 
 def test(logger, args):
     start_index, end_index = args.indicies
@@ -172,6 +171,14 @@ def main():
     parser.add_argument("-t", "--temperature", type = float,
                         metavar = "temperature", default = None,
                         help = "Temperature of the outputs")
+    
+    parser.add_argument("--ngpus", type = int,
+                        metavar = "ngpus", default = None,
+                        help = "Number of GPUs to use")
+    
+    parser.add_argument("--model", type = str,
+                        metavar = "model", default = None,
+                        help = "The Huggingface model to use")
  
     # parse the arguments from standard input
     args = parser.parse_args()
