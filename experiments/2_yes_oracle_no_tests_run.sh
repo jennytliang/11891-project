@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name=8_yes_oracle_no_tests_run
-#SBATCH --output=debug-yes_oracle_no_tests_run_8.out
-#SBATCH --error=debug-yes_oracle_no_tests_run_8.err
+#SBATCH --job-name=yes_oracle_no_tests_run
+#SBATCH --output=debug-yes_oracle_no_tests_run.out
+#SBATCH --error=debug-yes_oracle_no_tests_run.err
 #SBATCH --time=15:00:00
-#SBATCH --gres=gpu:A6000:1
+#SBATCH --gres=gpu:A6000:2
 #SBATCH --mem=64G
 
 cd /home/jtliang/interactive-constrained-decoding/11891-project
@@ -14,7 +14,7 @@ OUTPUT_FOLDER=/home/jtliang/interactive-constrained-decoding/11891-project/exper
 TEMPERATURE=1.0
 MODEL=codellama/CodeLlama-13b-Python-hf
 
-python3 ./experiments/2_yes_oracle_no_tests.py run -f $INPUT_FOLDER $OUTPUT_FOLDER -i 0 164 -t $TEMPERATURE --model $MODEL
+python3 ./experiments/2_yes_oracle_no_tests.py run -f $INPUT_FOLDER $OUTPUT_FOLDER -i 0 164 -t $TEMPERATURE --model $MODEL --ngpus=2
 # python3 ./experiments/2_yes_oracle_no_tests.py run -f $INPUT_FOLDER $OUTPUT_FOLDER -i 0 20 -t $TEMPERATURE --model $MODEL
 # python3 ./experiments/2_yes_oracle_no_tests.py run -f $INPUT_FOLDER $OUTPUT_FOLDER -i 20 41 -t $TEMPERATURE
 # python3 ./experiments/2_yes_oracle_no_tests.py run -f $INPUT_FOLDER $OUTPUT_FOLDER -i 41 61 -t $TEMPERATURE
