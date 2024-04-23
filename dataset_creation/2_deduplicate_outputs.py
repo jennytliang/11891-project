@@ -14,12 +14,18 @@ for i in range(len(dataset["test"])):
     solutions = set()
 
     for j in range(num_outputs):
-        f = open(f"./data/{model_name}/duplicated_code/temperature-{temperature}_problem-{i}_solution-{j}.py", "r")
+        f = open(
+            f"./data/{model_name}/duplicated_code/temperature-{temperature}_problem-{i}_solution-{j}.py",
+            "r",
+        )
         code = f.read()
 
         if code not in solutions:
             solutions.add(code)
-            
-            f = open(f"./data/{model_name}/code/temperature-{temperature}_problem-{i}_solution-{j}.py", "w")
+
+            f = open(
+                f"./data/{model_name}/code/temperature-{temperature}_problem-{i}_solution-{j}.py",
+                "w",
+            )
             f.write(code)
             f.close()

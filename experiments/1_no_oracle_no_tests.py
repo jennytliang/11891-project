@@ -5,6 +5,7 @@ import argparse
 import subprocess
 import json
 
+
 def test(logger, args):
     t = args.temperature
     logger.info(t)
@@ -23,14 +24,18 @@ def test(logger, args):
 
         for j in range(10):
             try:
-                code_file_path = f"{input_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py"
+                code_file_path = (
+                    f"{input_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py"
+                )
                 code_file = open(code_file_path, "r")
                 code = code_file.read()
                 code_file.close()
-            except: # Do nothing on error
+            except:  # Do nothing on error
                 pass
             else:
-                test_file_path = f"{output_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py"
+                test_file_path = (
+                    f"{output_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py"
+                )
                 test_file = open(test_file_path, "w")
                 test_file.write(code + "\n\n" + test + "\n\n" + f"check({entry_point})")
                 test_file.close()
@@ -44,7 +49,9 @@ def test(logger, args):
 
                 # Execute the command
                 try:
-                    process = subprocess.run(command, capture_output=True, text=True, timeout=120)
+                    process = subprocess.run(
+                        command, capture_output=True, text=True, timeout=120
+                    )
                 except Exception as e:
                     data[f"problem-{i}"].append(str(e))
                 else:
@@ -57,29 +64,42 @@ def test(logger, args):
     logger.info("writing to file...")
     json.dump(data, open(f"{output_folder_path}/no_oracle_no_tests_{t}.json", "w"))
 
+
 def main():
     # create parser object
-    parser = argparse.ArgumentParser(description = "A text file manager!")
- 
+    parser = argparse.ArgumentParser(description="A text file manager!")
+
     # defining arguments for parser object
     parser.add_argument("action")
-    
-    parser.add_argument("-f", "--folderpaths", type = str, nargs = 2,
-                        metavar = "folder_paths", default = None,
-                        help = "Reads input files and write output files to the specified folder paths (input, output)")
-    
-    parser.add_argument("-t", "--temperature", type = float,
-                        metavar = "temperature", default = None,
-                        help = "Temperature of the outputs")
- 
+
+    parser.add_argument(
+        "-f",
+        "--folderpaths",
+        type=str,
+        nargs=2,
+        metavar="folder_paths",
+        default=None,
+        help="Reads input files and write output files to the specified folder paths (input, output)",
+    )
+
+    parser.add_argument(
+        "-t",
+        "--temperature",
+        type=float,
+        metavar="temperature",
+        default=None,
+        help="Temperature of the outputs",
+    )
+
     # parse the arguments from standard input
     args = parser.parse_args()
-     
+
     # calling functions depending on type of argument
     if args.action == "test":
         logger = get_logger("INFO", "starting test for 1_no_oracle_no_tests.py")
         test(logger, args)
- 
+
+
 if __name__ == "__main__":
     # calling the main function
     main()

@@ -31,13 +31,18 @@ for i in range(len(dataset["test"])):
         num_beams=10,
         num_return_sequences=10,
         temperature=temperature,
-        do_sample=True
+        do_sample=True,
     )
 
     for j in range(len(outputs)):
-        decoded_output = tokenizer.decode(outputs[j]).replace("<s>", "").replace("</s>", "").lstrip()
+        decoded_output = (
+            tokenizer.decode(outputs[j]).replace("<s>", "").replace("</s>", "").lstrip()
+        )
         print(decoded_output)
-        
-        f = open(f"./data/{model_name}/code/temperature-{temperature}_problem-{i}_solution-{j}.py", "w")
+
+        f = open(
+            f"./data/{model_name}/code/temperature-{temperature}_problem-{i}_solution-{j}.py",
+            "w",
+        )
         f.write(decoded_output)
         f.close()

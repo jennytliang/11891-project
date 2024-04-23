@@ -2,10 +2,16 @@
 from vllm import LLM, SamplingParams
 from datasets import load_dataset
 from transformers import AutoTokenizer
-from utils import get_logger, get_constraints, get_constraint_text, get_second_quote_end_index
+from utils import (
+    get_logger,
+    get_constraints,
+    get_constraint_text,
+    get_second_quote_end_index,
+)
 import argparse
 import subprocess
 import json
+
 
 def run(logger, args):
     start_index, end_index = args.indicies
@@ -37,7 +43,9 @@ def run(logger, args):
 
         for j in range(10):
             try:
-                code_file_path = f"{input_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py"
+                code_file_path = (
+                    f"{input_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py"
+                )
                 code_file = open(code_file_path, "r")
                 full_code = code_file.read()
                 code_file.close()
@@ -45,44 +53,66 @@ def run(logger, args):
                 # Trim away everything past the specification, which could include constraints/things not related to code
                 second_quote_end_index = get_second_quote_end_index(full_code)
                 code = full_code[second_quote_end_index:]
-            except: # Do nothing on error
+            except:  # Do nothing on error
                 pass
             else:
                 if code != full_solution:
                     code_tokens = tokenizer.tokenize(code)
-                    solution_tokens = tokenizer.tokenize(example["canonical_solution"].lstrip())
+                    solution_tokens = tokenizer.tokenize(
+                        example["canonical_solution"].lstrip()
+                    )
                     constraints = get_constraints(code_tokens, solution_tokens)
 
                     constraint_text = None
                     if len(constraints) > 0:
                         constraint_to_use = constraints[0]
-                        constraint_text = get_constraint_text(constraint_to_use, code_tokens, solution_tokens, logger)
+                        constraint_text = get_constraint_text(
+                            constraint_to_use, code_tokens, solution_tokens, logger
+                        )
 
                         # Find the next available constraint if the current constraint returns nothing
                         index = 1
                         logger.info(constraint_to_use)
                         while constraint_text == "" and index < len(constraints):
                             constraint_to_use = constraints[index]
-                            constraint_text = get_constraint_text(constraint_to_use, code_tokens, solution_tokens, logger)
+                            constraint_text = get_constraint_text(
+                                constraint_to_use, code_tokens, solution_tokens, logger
+                            )
                             index += 1
                         logger.info(constraint_to_use)
                         logger.info(constraint_text)
-                        
-                        # Identify tokens to keep
-                        solution_constraint_start_index = constraint_to_use[3] # Index of the constraint in solution_tokens
-                        logger.info(solution_tokens[0:solution_constraint_start_index])
-                        temp_code = tokenizer.decode(tokenizer.convert_tokens_to_ids(solution_tokens[0:solution_constraint_start_index]))
-                        logger.info(temp_code)
-                        
-                        assert(len(temp_code) <= len(example["canonical_solution"])) # temp_code should always be a subset of the canonical solution
 
-                        text_to_keep = code[0:len(temp_code)]
+                        # Identify tokens to keep
+                        solution_constraint_start_index = constraint_to_use[
+                            3
+                        ]  # Index of the constraint in solution_tokens
+                        logger.info(solution_tokens[0:solution_constraint_start_index])
+                        temp_code = tokenizer.decode(
+                            tokenizer.convert_tokens_to_ids(
+                                solution_tokens[0:solution_constraint_start_index]
+                            )
+                        )
+                        logger.info(temp_code)
+
+                        assert len(temp_code) <= len(
+                            example["canonical_solution"]
+                        )  # temp_code should always be a subset of the canonical solution
+
+                        text_to_keep = code[0 : len(temp_code)]
                         logger.info(text_to_keep)
 
-                    if constraint_text != None: # Should be None if the constraint is not valid
-                        closing_quotes = "\"\"\"" if "\"\"\"" in prompt else "'''"
+                    if (
+                        constraint_text != None
+                    ):  # Should be None if the constraint is not valid
+                        closing_quotes = '"""' if '"""' in prompt else "'''"
 
-                        updated_code = prompt[:-4] + "\n" + constraint_text + f"\t{closing_quotes}\n" + text_to_keep
+                        updated_code = (
+                            prompt[:-4]
+                            + "\n"
+                            + constraint_text
+                            + f"\t{closing_quotes}\n"
+                            + text_to_keep
+                        )
 
                         prefixes.append(updated_code)
                         indicies.append(i, j)
@@ -93,12 +123,15 @@ def run(logger, args):
 
     for (i, j), text in zip(generated_texts):
         text = text.replace("<s>", "").replace("</s>", "").lstrip()
-        
-        f = open(f"{output_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py", "w")
+
+        f = open(
+            f"{output_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py", "w"
+        )
         f.write(text)
         f.close()
 
         logger.info(f"{output_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py")
+
 
 def test(logger, args):
     start_index, end_index = args.indicies
@@ -116,21 +149,27 @@ def test(logger, args):
         example = dataset["test"][i]
         for j in range(10):
             try:
-                code_file_path = f"{input_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py"
+                code_file_path = (
+                    f"{input_folder_path}/temperature-{t}_problem-{i}_solution-{j}.py"
+                )
                 code_file = open(code_file_path, "r")
                 code = code_file.read()
                 code_file.close()
-            except: # Do nothing on error
+            except:  # Do nothing on error
                 pass
-            else:                            
+            else:
                 test_file_path = f"{output_folder_path}/tests/temperature-{t}_problem-{i}_solution-{j}.py"
                 test_file = open(test_file_path, "w")
 
                 test = example["test"]
                 entry_point = example["entry_point"]
 
-                test_file_content = code + "\n\n" + test + "\n\n" + f"check({entry_point})"
-                test_file.write(test_file_content.encode("ascii", "ignore").decode("ascii"))
+                test_file_content = (
+                    code + "\n\n" + test + "\n\n" + f"check({entry_point})"
+                )
+                test_file.write(
+                    test_file_content.encode("ascii", "ignore").decode("ascii")
+                )
                 test_file.close()
 
                 # Build the command to run the Python script
@@ -140,7 +179,9 @@ def test(logger, args):
 
                 # Execute the command
                 try:
-                    process = subprocess.run(command, capture_output=True, text=True, timeout=120)
+                    process = subprocess.run(
+                        command, capture_output=True, text=True, timeout=120
+                    )
                 except Exception as e:
                     data[f"problem-{i}"].append(str(e))
                 else:
@@ -153,36 +194,58 @@ def test(logger, args):
     logger.info("writing to file...")
     json.dump(data, open(f"{output_folder_path}/yes_oracle_no_tests.json", "w"))
 
+
 def main():
     # create parser object
-    parser = argparse.ArgumentParser(description = "A text file manager!")
- 
+    parser = argparse.ArgumentParser(description="A text file manager!")
+
     # defining arguments for parser object
     parser.add_argument("action")
-    
-    parser.add_argument("-f", "--folderpaths", type = str, nargs = 2,
-                        metavar = "folder_paths", default = None,
-                        help = "Reads input files and write output files to the specified folder paths (input, output)")
-    
-    parser.add_argument("-i", "--indicies", type = int, nargs = 2,
-                        metavar = "indicies", default = None,
-                        help = "Only considers dataset values between the specified indicies (start inclusive, end exclusive)")
-    
-    parser.add_argument("-t", "--temperature", type = float,
-                        metavar = "temperature", default = None,
-                        help = "Temperature of the outputs")
-    
-    parser.add_argument("--ngpus", type = int,
-                        metavar = "ngpus", default = None,
-                        help = "Number of GPUs to use")
-    
-    parser.add_argument("--model", type = str,
-                        metavar = "model", default = None,
-                        help = "The Huggingface model to use")
- 
+
+    parser.add_argument(
+        "-f",
+        "--folderpaths",
+        type=str,
+        nargs=2,
+        metavar="folder_paths",
+        default=None,
+        help="Reads input files and write output files to the specified folder paths (input, output)",
+    )
+
+    parser.add_argument(
+        "-i",
+        "--indicies",
+        type=int,
+        nargs=2,
+        metavar="indicies",
+        default=None,
+        help="Only considers dataset values between the specified indicies (start inclusive, end exclusive)",
+    )
+
+    parser.add_argument(
+        "-t",
+        "--temperature",
+        type=float,
+        metavar="temperature",
+        default=None,
+        help="Temperature of the outputs",
+    )
+
+    parser.add_argument(
+        "--ngpus", type=int, metavar="ngpus", default=None, help="Number of GPUs to use"
+    )
+
+    parser.add_argument(
+        "--model",
+        type=str,
+        metavar="model",
+        default=None,
+        help="The Huggingface model to use",
+    )
+
     # parse the arguments from standard input
     args = parser.parse_args()
-     
+
     # calling functions depending on type of argument
     if args.action == "run":
         logger = get_logger("INFO", "starting run for 2_yes_oracle_no_tests.py")
@@ -190,7 +253,8 @@ def main():
     elif args.action == "test":
         logger = get_logger("INFO", "starting test for 2_yes_oracle_no_tests.py")
         test(logger, args)
- 
+
+
 if __name__ == "__main__":
     # calling the main function
     main()
