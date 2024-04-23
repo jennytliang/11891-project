@@ -14,6 +14,12 @@ from utils import (
 def parse_arguments():
     # create parser object
     parser = argparse.ArgumentParser(description="baseline 1")
+    
+    parser.add_argument(
+        "data-dir",
+        type=str,
+        required=True,
+    )
 
     parser.add_argument(
         "model-name",
@@ -41,11 +47,6 @@ def parse_arguments():
         "--temperature", type=float, default=0.0,
     )
     
-    parser.add_argument(
-        "data-dir",
-        type=str,
-        required=True,
-    )
 
     return parser.parse_args
 
