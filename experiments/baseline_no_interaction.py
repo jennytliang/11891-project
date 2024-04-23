@@ -92,8 +92,9 @@ if __name__ == "__main__":
     output_file_name = os.path.join(
         args.data_dir,
         'outputs',
-        f"{args.model_name}_temp={args.temperature}.dict"
+        f"{args.model_name.replace('/', '-')}_temp={args.temperature}.dict"
     )
+
     with open(output_file_name, 'w') as f:
         json.dump(output_dict, f)
 
