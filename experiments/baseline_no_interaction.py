@@ -29,6 +29,12 @@ def parse_arguments():
     )
 
     parser.add_argument(
+        "--model-download-dir",
+        type=str,
+        default="/data/user_data/nishant2/code_gen_project/models/",
+    )
+
+    parser.add_argument(
         "--start-index",
         type=int,
         default=0,
@@ -66,6 +72,7 @@ if __name__ == "__main__":
     model = LLM(
         model=args.model_name,
         tensor_parallel_size=args.ngpus,
+        download_dir=args.model_download_dir,
     )
 
     sampling_params = SamplingParams(temperature=args.temperature, max_tokens=500)
