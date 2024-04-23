@@ -16,25 +16,25 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="baseline 1")
     
     parser.add_argument(
-        "data-dir",
+        "--data-dir",
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        "model-name",
+        "--model-name",
         type=str,
         required=True,
     )
     
     parser.add_argument(
-        "start-index",
+        "--start-index",
         type=int,
         default=0,
     )
     
     parser.add_argument(
-        "end-index",
+        "--end-index",
         type=int,
         default=2**32,
     )
