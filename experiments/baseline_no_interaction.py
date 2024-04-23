@@ -30,7 +30,7 @@ def parse_arguments():
     parser.add_argument(
         "end-index",
         type=int,
-        default=-1,
+        default=2**32,
     )
 
     parser.add_argument(
