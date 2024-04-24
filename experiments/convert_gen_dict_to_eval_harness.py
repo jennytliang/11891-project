@@ -34,6 +34,27 @@ def parse_arguments():
     return parser.parse_args()
 
 
+def process_generation(prompt: str, generation: str) -> str:
+    stop_tokens = [
+        "\nclass",
+        "\ndef",
+        "\n#",
+        "\n@",
+        "\nprint",
+        "\nif",
+        "\n```",
+        "<file_sep>",
+    ]
+
+    end_token = len(generation)
+    for stop_token in stop_tokens:
+        index_of_stop = generation.find(stop_token)
+        if index_of_stop < end_token and index_of_stop != -1:
+            end_token = index_of_stop
+
+    return prompt + generation[:end_token]
+
+
 if __name__ == "__main__":
     args = parse_arguments()
 
@@ -46,10 +67,13 @@ if __name__ == "__main__":
     with open(input_filename, "r") as f:
         data_dict = json.load(f)
 
-    gens_list = [
-        [data_dict[f"HumanEval/{i}"][args.key_in_dict]]
-        for i in range(len(data_dict.keys()))
-    ]
+    gens_list = []
+
+    for i in range(len(data_dict.keys())):
+        curr_prompt = data_dict[f"HumanEval/{i}"]["prompt"]
+        curr_gen = data_dict[f"HumanEval/{i}"][args.key_in_dict]
+
+        gens_list.append(process_generation(curr_prompt, curr_gen))
 
     output_filename = os.path.join(
         args.data_dir,
