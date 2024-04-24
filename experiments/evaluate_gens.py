@@ -55,7 +55,7 @@ if __name__ == "__main__":
     )
 
     with open(input_file_name, "r") as f:
-        input_data = json.load(input_file_name)
+        input_data = json.load(f)
 
     gens_list = []
     references_list = []
