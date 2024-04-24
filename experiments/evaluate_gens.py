@@ -1,7 +1,5 @@
-import sys
 import os
 import argparse
-import subprocess
 import json
 from vllm import LLM, SamplingParams
 from datasets import load_dataset
@@ -11,6 +9,9 @@ from utils import (
     get_constraint_text,
     get_second_quote_end_index,
 )
+from code_bert_score import score
+import evaluate
+from convert_gen_dict_to_eval_harness import process_generation
 
 
 def parse_arguments():
@@ -30,34 +31,15 @@ def parse_arguments():
     )
 
     parser.add_argument(
-        "--model-download-dir",
-        type=str,
-        default="/data/user_data/nishant2/code_gen_project/models/",
-    )
-
-    parser.add_argument(
-        "--start-index",
-        type=int,
-        default=0,
-    )
-
-    parser.add_argument(
-        "--end-index",
-        type=int,
-        default=2**32,
-    )
-
-    parser.add_argument(
-        "--ngpus",
-        type=int,
-        help="Number of GPUs to use",
-        default=1,
-    )
-
-    parser.add_argument(
         "--temperature",
         type=float,
         default=0.0,
+    )
+
+    parser.add_argument(
+        "--key-in-dict",
+        type=str,
+        required=True,
     )
 
     return parser.parse_args()
@@ -72,36 +54,45 @@ if __name__ == "__main__":
         f"{args.model_name.replace('/', '-')}_temp={args.temperature}.dict",
     )
 
-    with open(input_file_name, 'r') as f:
+    with open(input_file_name, "r") as f:
         input_data = json.load(input_file_name)
 
-    for task_id in input_data:
-        curr_dict = input_data[task_id]
+    gens_list = []
+    references_list = []
 
-    # TODO: things to compute
-    # Pass @ 1
-    # CodeBERT Prec Rec F1
+    for i in range(len(input_data)):
+        curr_prompt = input_data[f"HumanEval/{i}"]["prompt"]
+        curr_gen = input_data[f"HumanEval/{i}"][args.key_in_dict]
+
+        gens_list.append(
+            process_generation(curr_prompt, curr_gen), return_gen_only=True
+        )
+        references_list.append(input_data[f"HumanEval/{i}"]["canonical_solution"])
+
+    output_results_dict = {}
+    precision, recall, f1_score, f3_score = score(
+        gens_list, references_list, lang="python"
+    )
+
+    output_results_dict["codeBERT"] = {
+        "precision": precision.mean().item(),
+        "recall": recall.mean().item(),
+        "f1": f1_score.mean().item(),
+        "f3": f3_score.mean().item(),
+    }
+
     # CodeBLEU
-    # Execute code and see?
-
-    # Load my dataset
-    # dataset = load_dataset("evalplus/humanevalplus")["test"]
-    '''
-        prefixes.append(data_instance["prompt"].lstrip())
-        output_dict[data_instance["task_id"]] = {
-            "prompt": data_instance["prompt"],
-            "canonical_solution": data_instance["canonical_solution"],
-            "entry_point": data_instance["entry_point"],
-            "test": data_instance["test"],
-            "generation_step_0": None,
-        }
-    '''
+    codeBLEU_metric = evaluate.load("k4black/codebleu")
+    codeBLEU_results = codeBLEU_metric.compute(
+        references=references_list, predictions=gens_list, lang=["python"]
+    )
+    output_results_dict["codeBLEU"] = codeBLEU_results
 
     output_file_name = os.path.join(
         args.data_dir,
         "outputs",
-        f"{args.model_name.replace('/', '-')}_temp={args.temperature}.dict",
+        f"{args.model_name.replace('/', '-')}_temp={args.temperature}_stage={args.key_in_dict}.metrics.dict",
     )
 
     with open(output_file_name, "w") as f:
-        json.dump(output_dict, f)
+        json.dump(output_results_dict, f)

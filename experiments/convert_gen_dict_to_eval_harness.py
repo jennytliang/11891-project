@@ -34,7 +34,9 @@ def parse_arguments():
     return parser.parse_args()
 
 
-def process_generation(prompt: str, generation: str) -> str:
+def process_generation(
+    prompt: str, generation: str, return_gen_only: bool = False
+) -> str:
     stop_tokens = [
         "\nclass",
         "\ndef",
@@ -51,6 +53,9 @@ def process_generation(prompt: str, generation: str) -> str:
         index_of_stop = generation.find(stop_token)
         if index_of_stop < end_token and index_of_stop != -1:
             end_token = index_of_stop
+
+    if return_gen_only:
+        return generation[:end_token]
 
     return prompt + generation[:end_token]
 
