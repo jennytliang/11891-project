@@ -1,6 +1,6 @@
 transformers==4.40.0
 datasets==2.19.0
 evaluate==0.4.1
-vllm==0.3.3
+vllm==0.4.0.post1
 ipython==8.23.0
 black==24.4.0
