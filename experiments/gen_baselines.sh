@@ -12,4 +12,9 @@ do
     python3 convert_gen_dict_to_eval_harness.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=1.0 --key-in-dict=generation_step_0
     python3 convert_gen_dict_to_eval_harness.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=2.0 --key-in-dict=generation_step_0
     python3 convert_gen_dict_to_eval_harness.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=3.0 --key-in-dict=generation_step_0
+    python3 evaluate_gens.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=0.0 --key-in-dict=generation_step_0
+    python3 evaluate_gens.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=0.5 --key-in-dict=generation_step_0
+    python3 evaluate_gens.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=1.0 --key-in-dict=generation_step_0
+    python3 evaluate_gens.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=2.0 --key-in-dict=generation_step_0
+    python3 evaluate_gens.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=3.0 --key-in-dict=generation_step_0
 done
