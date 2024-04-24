@@ -1,3 +1,4 @@
+import sys
 import os
 import argparse
 import subprocess
@@ -64,6 +65,16 @@ def parse_arguments():
 
 if __name__ == "__main__":
     args = parse_arguments()
+
+    output_file_name = os.path.join(
+        args.data_dir,
+        "outputs",
+        f"{args.model_name.replace('/', '-')}_temp={args.temperature}.dict",
+    )
+
+    if os.path.exists(output_file_name):
+        print(f"file {output_file_name} already exists")
+        sys.exit(0)
 
     # Load my dataset
     dataset = load_dataset("evalplus/humanevalplus")["test"]
