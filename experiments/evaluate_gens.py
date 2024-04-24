@@ -65,9 +65,9 @@ if __name__ == "__main__":
         curr_gen = input_data[f"HumanEval/{i}"][args.key_in_dict]
 
         gens_list.append(
-            process_generation(curr_prompt, curr_gen, return_gen_only=True)
+            process_generation(curr_prompt, curr_gen, return_gen_only=True).strip()
         )
-        references_list.append(input_data[f"HumanEval/{i}"]["canonical_solution"])
+        references_list.append(input_data[f"HumanEval/{i}"]["canonical_solution"].strip())
 
     output_results_dict = {}
     precision, recall, f1_score, f3_score = score(
