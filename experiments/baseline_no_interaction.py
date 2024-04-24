@@ -84,7 +84,7 @@ if __name__ == "__main__":
         model=args.model_name,
         tensor_parallel_size=args.ngpus,
         download_dir=args.model_download_dir,
-        max_seq_len=4096,
+        max_model_len=4096,
     )
 
     sampling_params = SamplingParams(temperature=args.temperature, max_tokens=500)
