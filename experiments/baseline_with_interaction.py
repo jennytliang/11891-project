@@ -127,7 +127,7 @@ if __name__ == "__main__":
     individual_results_path = os.path.join(
         args.data_dir,
         "outputs",
-        f"{args.model_name.replace('/', '-')}_temp={args.temperature}_stage=generation_step={args.interaction_step}.eval_harness_gens.individual_results.json",
+        f"{args.model_name.replace('/', '-')}_temp={args.temperature}_stage=generation_step={args.interaction_step-1}.eval_harness_gens.individual_results.json",
     )
 
     if not os.path.exists(individual_results_path):
