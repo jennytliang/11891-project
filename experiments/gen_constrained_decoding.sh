@@ -4,7 +4,7 @@ interaction_step=1
 models=("codellama/CodeLlama-7b-Python-hf") 
 for model in "${models[@]}"
 do
-    python3 experiment_with_constraints.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=0.0 --interaction-step=$interaction_step
+    python3 experiment_with_constraints.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=0.0 --interaction-step=$interaction_step --end-index=10
     python3 convert_gen_dict_to_eval_harness.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=0.0 --key-in-dict=generation_step_$interaction_step --interaction-step=$interaction_step --phase=exp
     
     #python3 experiment_with_constraints.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=0.5 --interaction-step=$interaction_step
