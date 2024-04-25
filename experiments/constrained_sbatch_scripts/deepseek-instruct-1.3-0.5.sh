@@ -8,7 +8,7 @@ conda activate code_gen
 
 # Run your Python script
 model="deepseek-ai/deepseek-coder-1.3b-instruct"
-interaction_step=1
+interaction_step=2
 temperature=0.5
 python3 experiment_with_constraints.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=$temperature --interaction-step=$interaction_step
 python3 convert_gen_dict_to_eval_harness.py --data-dir=/data/user_data/nishant2/code_gen_project/ --model-name=$model --temperature=$temperature --key-in-dict=generation_step_$interaction_step --interaction-step=$interaction_step --phase=exp
