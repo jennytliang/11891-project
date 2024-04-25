@@ -230,7 +230,7 @@ if __name__ == "__main__":
     # Save generations
 
     for i, prefix in enumerate(prefixes):
-        logit_processor = partial(base_logit_processor, interaction_tok=interaction_tokens_list[i], factor=2.0)
+        logit_processor = partial(base_logit_processor, interaction_tokens=interaction_tokens_list[i], factor=2.0)
         sampling_params = SamplingParams(temperature=args.temperature, max_tokens=500, logits_processors=[logit_processor])
         output = model.generate(prefix, sampling_params)
 
