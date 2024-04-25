@@ -78,7 +78,7 @@ if __name__ == "__main__":
         curr_prompt = data_dict[f"HumanEval/{i}"]["prompt"]
         curr_gen = data_dict[f"HumanEval/{i}"][args.key_in_dict]
 
-        gens_list.append(process_generation(curr_prompt, curr_gen))
+        gens_list.append([process_generation(curr_prompt, curr_gen)])
 
     output_filename = os.path.join(
         args.data_dir,
