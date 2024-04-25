@@ -30,6 +30,12 @@ def parse_arguments():
         type=str,
         required=True,
     )
+
+    parser.add_argument(
+        "--interaction-step",
+        type=int,
+        default=0,
+    )
     
     return parser.parse_args()
 
@@ -63,11 +69,18 @@ def process_generation(
 if __name__ == "__main__":
     args = parse_arguments()
 
-    input_filename = os.path.join(
-        args.data_dir,
-        "outputs",
-        f"{args.model_name.replace('/', '-')}_temp={args.temperature}.dict",
-    )
+    if args.interaction_step == 0:
+        input_filename = os.path.join(
+            args.data_dir,
+            "outputs",
+            f"{args.model_name.replace('/', '-')}_temp={args.temperature}.dict",
+        )
+    else:
+        input_filename = os.path.join(
+            args.data_dir,
+            "outputs",
+            f"{args.model_name.replace('/', '-')}_temp={args.temperature}_step={args.interaction_step}.dict",
+        )
 
     with open(input_filename, "r") as f:
         data_dict = json.load(f)
@@ -75,8 +88,12 @@ if __name__ == "__main__":
     gens_list = []
 
     for i in range(len(data_dict.keys())):
-        curr_prompt = data_dict[f"HumanEval/{i}"]["prompt"]
-        curr_gen = data_dict[f"HumanEval/{i}"][args.key_in_dict]
+        task_id = f"HumanEval/{i}"
+        curr_prompt = data_dict[task_id]["prompt"]
+        curr_gen = data_dict[task_id][args.key_in_dict]
+
+        if f'interaction_{args.interaction_step}' in data_dict[task_id]:
+            curr_gen = data_dict[task_id][f'interaction_{args.interaction_step}'] + curr_gen
 
         gens_list.append([process_generation(curr_prompt, curr_gen)])
 
