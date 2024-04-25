@@ -237,7 +237,6 @@ if __name__ == "__main__":
 
         task_id = task_ids_not_already_passed[i]
         output_dict[task_id][f"generation_step_{args.interaction_step}"] = output[0].outputs[0].text
-        print(output[0].outputs[0].text)
 
     with open(output_file_name, "w") as f:
         json.dump(output_dict, f)
