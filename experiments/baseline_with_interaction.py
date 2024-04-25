@@ -189,11 +189,16 @@ if __name__ == "__main__":
 
     for task_id in prev_interaction_outputs_dict:
         prev_generation = prev_interaction_outputs_dict[task_id][f"generation_step_{args.interaction_step-1}"]
+        prev_interaction_step_key = f"interaction_{args.interaction_step-1}"
+
         test_success = individual_results['humanevalplus'][str(task_id.split('/')[-1])][0][1]['passed']
         if not test_success:
             task_ids_not_already_passed.append(task_id)
 
             curr_solution = prev_interaction_outputs_dict[task_id]["canonical_solution"]
+            
+            if prev_interaction_step_key in prev_interaction_outputs_dict[task_id]:
+                prev_generation = prev_interaction_outputs_dict[task_id][prev_interaction_step_key] + prev_generation
 
             interaction_str = get_interaction(generation=prev_generation, solution=curr_solution, tokenizer=tokenizer)
             output_dict[task_id][f'interaction_{args.interaction_step}'] = interaction_str
@@ -203,6 +208,8 @@ if __name__ == "__main__":
             )
         else:
             output_dict[task_id][f"generation_step_{args.interaction_step}"] = prev_generation
+            if prev_interaction_step_key in prev_interaction_outputs_dict[task_id]:
+                output_dict[task_id][f"interaction_{args.interaction_step}"] = prev_interaction_outputs_dict[task_id][prev_interaction_step_key]
 
     # Save generations
     outputs = model.generate(prefixes, sampling_params)
