@@ -30,7 +30,7 @@ def parse_arguments():
         type=str,
         required=True,
     )
-
+    
     return parser.parse_args()
 
 
