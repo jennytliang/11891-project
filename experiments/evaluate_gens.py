@@ -42,32 +42,49 @@ def parse_arguments():
         required=True,
     )
 
+    parser.add_argument(
+        "--interaction-step",
+        type=int,
+        default=0,
+    )
+
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_arguments()
 
-    input_file_name = os.path.join(
-        args.data_dir,
-        "outputs",
-        f"{args.model_name.replace('/', '-')}_temp={args.temperature}.dict",
-    )
+    if args.interaction_step == 0:
+        input_filename = os.path.join(
+            args.data_dir,
+            "outputs",
+            f"{args.model_name.replace('/', '-')}_temp={args.temperature}.dict",
+        )
+    else:
+        input_filename = os.path.join(
+            args.data_dir,
+            "outputs",
+            f"{args.model_name.replace('/', '-')}_temp={args.temperature}_step={args.interaction_step}.dict",
+        )
 
-    with open(input_file_name, "r") as f:
+    with open(input_filename, "r") as f:
         input_data = json.load(f)
 
     gens_list = []
     references_list = []
 
     for i in range(len(input_data)):
-        curr_prompt = input_data[f"HumanEval/{i}"]["prompt"]
-        curr_gen = input_data[f"HumanEval/{i}"][args.key_in_dict]
+        task_id = f"HumanEval/{i}"
+        curr_prompt = input_data[task_id]["prompt"]
+        curr_gen = input_data[task_id][args.key_in_dict]
+        
+        if f'interaction_{args.interaction_step}' in input_data[task_id]:
+            curr_gen = input_data[task_id][f'interaction_{args.interaction_step}'] + curr_gen
 
         gens_list.append(
             process_generation(curr_prompt, curr_gen, return_gen_only=True).strip()
         )
-        references_list.append(input_data[f"HumanEval/{i}"]["canonical_solution"].strip())
+        references_list.append(input_data[task_id]["canonical_solution"].strip())
 
     output_results_dict = {}
     precision, recall, f1_score, f3_score = score(
