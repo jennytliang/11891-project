@@ -232,7 +232,7 @@ if __name__ == "__main__":
     for i, prefix in enumerate(prefixes):
         logit_processor = partial(base_logit_processor, interaction_tokens=interaction_tokens_list[i], factor=2.0)
         sampling_params = SamplingParams(temperature=args.temperature, max_tokens=500, logits_processors=[logit_processor])
-        output = model.generate(prefix, sampling_params)
+        output = model.generate([prefix], sampling_params)
 
         task_id = task_ids_not_already_passed[i]
         output_dict[task_id][f"generation_step_{args.interaction_step}"] = output.outputs[0].text
