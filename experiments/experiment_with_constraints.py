@@ -97,7 +97,7 @@ def parse_arguments():
     return parser.parse_args()
 
 def base_logit_processor(token_ids, logits, interaction_tokens, factor: float = 2):
-    for token in interaction_tokens:
+    for token in list(set(interaction_tokens)):
         logits[token] *= factor
     return logits
 
@@ -220,7 +220,7 @@ if __name__ == "__main__":
                 prev_interaction_outputs_dict[task_id]["prompt"].lstrip() + interaction_str
             )
 
-            interaction_tok = tokenizer.encode(interaction_str)
+            interaction_tok = tokenizer.encode(interaction_str.replace('\n', '').replace('\t', ''))
             interaction_tokens_list.append(interaction_tok)
         else:
             output_dict[task_id][f"generation_step_{args.interaction_step}"] = prev_generation

@@ -37,6 +37,12 @@ def parse_arguments():
         default=0,
     )
     
+    parser.add_argument(
+        "--phase",
+        type=str,
+        default='baseline',
+    )
+    
     return parser.parse_args()
 
 
@@ -69,6 +75,11 @@ def process_generation(
 if __name__ == "__main__":
     args = parse_arguments()
 
+    if args.phase == 'baseline':
+        phase = ''
+    elif args.phase == 'exp':
+        phase = '_constraints'
+
     if args.interaction_step == 0:
         input_filename = os.path.join(
             args.data_dir,
@@ -79,7 +90,7 @@ if __name__ == "__main__":
         input_filename = os.path.join(
             args.data_dir,
             "outputs",
-            f"{args.model_name.replace('/', '-')}_temp={args.temperature}_step={args.interaction_step}.dict",
+            f"{args.model_name.replace('/', '-')}_temp={args.temperature}_step={args.interaction_step}{phase}.dict",
         )
 
     with open(input_filename, "r") as f:
@@ -100,7 +111,7 @@ if __name__ == "__main__":
     output_filename = os.path.join(
         args.data_dir,
         "outputs",
-        f"{args.model_name.replace('/', '-')}_temp={args.temperature}_stage={args.key_in_dict}.eval_harness_gens",
+        f"{args.model_name.replace('/', '-')}_temp={args.temperature}_stage={args.key_in_dict}{phase}.eval_harness_gens",
     )
 
     with open(output_filename, "w") as f:

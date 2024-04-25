@@ -48,11 +48,22 @@ def parse_arguments():
         default=0,
     )
 
+    parser.add_argument(
+        "--phase",
+        type=str,
+        default='baseline',
+    )
+
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_arguments()
+
+    if args.phase == 'baseline':
+        phase = ''
+    elif args.phase == 'exp':
+        phase = '_constraints'
 
     if args.interaction_step == 0:
         input_filename = os.path.join(
@@ -64,7 +75,7 @@ if __name__ == "__main__":
         input_filename = os.path.join(
             args.data_dir,
             "outputs",
-            f"{args.model_name.replace('/', '-')}_temp={args.temperature}_step={args.interaction_step}.dict",
+            f"{args.model_name.replace('/', '-')}_temp={args.temperature}_step={args.interaction_step}{phase}.dict",
         )
 
     with open(input_filename, "r") as f:
@@ -108,7 +119,7 @@ if __name__ == "__main__":
     output_file_name = os.path.join(
         args.data_dir,
         "outputs",
-        f"{args.model_name.replace('/', '-')}_temp={args.temperature}_stage={args.key_in_dict}.metrics.dict",
+        f"{args.model_name.replace('/', '-')}_temp={args.temperature}_stage={args.key_in_dict}{phase}.metrics.dict",
     )
 
     with open(output_file_name, "w") as f:
