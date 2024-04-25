@@ -88,12 +88,6 @@ def parse_arguments():
     )
 
     parser.add_argument(
-        "--key-in-dict",
-        type=str,
-        required=True,
-    )
-    
-    parser.add_argument(
         "--interaction-step",
         type=int,
         required=True,
