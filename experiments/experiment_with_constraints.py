@@ -97,6 +97,7 @@ def parse_arguments():
     return parser.parse_args()
 
 def base_logit_processor(token_ids, logits, interaction_tokens, factor: float = 2):
+    print(token_ids)
     for token in list(set(interaction_tokens)):
         logits[token] *= factor
     return logits
@@ -236,6 +237,7 @@ if __name__ == "__main__":
 
         task_id = task_ids_not_already_passed[i]
         output_dict[task_id][f"generation_step_{args.interaction_step}"] = output[0].outputs[0].text
+        print(output[0].outputs[0].text)
 
     with open(output_file_name, "w") as f:
         json.dump(output_dict, f)
