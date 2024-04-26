@@ -1,5 +1,5 @@
 #!/bin/bash
-interaction_step=2
+interaction_step=$1
 models=("codellama/CodeLlama-7b-Python-hf" "codellama/CodeLlama-13b-Python-hf" "deepseek-ai/deepseek-coder-1.3b-instruct" "deepseek-ai/deepseek-coder-6.7b-instruct")
 for model in "${models[@]}"
 do
