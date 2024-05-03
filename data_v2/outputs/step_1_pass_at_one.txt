@@ -1,0 +1,40 @@
+codellama-CodeLlama-13b-Python-hf_temp=0.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.6036585365853658
+codellama-CodeLlama-13b-Python-hf_temp=0.5_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.6036585365853658
+codellama-CodeLlama-13b-Python-hf_temp=1.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.4268292682926829
+codellama-CodeLlama-13b-Python-hf_temp=2.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.03048780487804878
+codellama-CodeLlama-13b-Python-hf_temp=3.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.0
+codellama-CodeLlama-7b-Python-hf_temp=0.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.5304878048780488
+codellama-CodeLlama-7b-Python-hf_temp=0.5_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.5182926829268293
+codellama-CodeLlama-7b-Python-hf_temp=1.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.3902439024390244
+codellama-CodeLlama-7b-Python-hf_temp=2.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.024390243902439025
+codellama-CodeLlama-7b-Python-hf_temp=3.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.0
+deepseek-ai-deepseek-coder-1.3b-instruct_temp=0.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.7378048780487805
+deepseek-ai-deepseek-coder-1.3b-instruct_temp=0.5_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.6890243902439024
+deepseek-ai-deepseek-coder-1.3b-instruct_temp=1.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.6341463414634146
+deepseek-ai-deepseek-coder-1.3b-instruct_temp=2.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.012195121951219513
+deepseek-ai-deepseek-coder-1.3b-instruct_temp=3.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.0
+deepseek-ai-deepseek-coder-6.7b-instruct_temp=0.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.774390243902439
+deepseek-ai-deepseek-coder-6.7b-instruct_temp=0.5_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.774390243902439
+deepseek-ai-deepseek-coder-6.7b-instruct_temp=1.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.7134146341463414
+deepseek-ai-deepseek-coder-6.7b-instruct_temp=2.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.07317073170731707
+deepseek-ai-deepseek-coder-6.7b-instruct_temp=3.0_stage=generation_step_1.eval_harness_gens
+    "pass@1": 0.0
