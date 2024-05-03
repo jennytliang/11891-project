@@ -1,0 +1,1 @@
+{"codeBERT": {"precision": 0.43932899832725525, "recall": 0.5710283517837524, "f1": 0.49552062153816223, "f3": 0.5538733601570129}, "codeBLEU": {"codebleu": 0.041487420232197196, "ngram_match_score": 1.0356762769152914e-05, "weighted_ngram_match_score": 0.00011686291490160906, "syntax_match_score": 0.02990780301326737, "dataflow_match_score": 0.13591465823785065}}
