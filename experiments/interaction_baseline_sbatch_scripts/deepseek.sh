@@ -8,7 +8,7 @@ conda activate code_gen
 
 # Run your Python script
 datadir=../data_v2/
-step=1
+step=4
 models=("deepseek-ai/deepseek-coder-1.3b-instruct" "deepseek-ai/deepseek-coder-6.7b-instruct")
 temperatures=("0.0" "0.5" "1.0" "2.0" "3.0")
 for model in "${models[@]}"

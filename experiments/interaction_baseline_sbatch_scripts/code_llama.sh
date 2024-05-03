@@ -8,7 +8,7 @@ conda activate code_gen
 
 # Run your Python script
 datadir=../data_v2/
-step=1
+step=4
 models=("codellama/CodeLlama-7b-Python-hf" "codellama/CodeLlama-13b-Python-hf")
 temperatures=("0.0" "0.5" "1.0" "2.0" "3.0")
 for model in "${models[@]}"
