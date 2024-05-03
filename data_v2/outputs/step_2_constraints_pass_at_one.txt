@@ -30,3 +30,18 @@ codellama-CodeLlama-13b-Python-hf_temp=1.0_stage=generation_step_2_constraints.e
     "pass@1": 0.4817073170731707
 codellama-CodeLlama-7b-Python-hf_temp=0.0_stage=generation_step_2_constraints.eval_harness_gens
     "pass@1": 0.5792682926829268
+codellama-CodeLlama-7b-Python-hf_temp=0.5_stage=generation_step_2_constraints.eval_harness_gens
+    "pass@1": 0.5670731707317073
+codellama-CodeLlama-7b-Python-hf_temp=1.0_stage=generation_step_2_constraints.eval_harness_gens
+    "pass@1": 0.4268292682926829
+deepseek-ai-deepseek-coder-1.3b-instruct_temp=0.0_stage=generation_step_2_constraints.eval_harness_gens
+    "pass@1": 0.7621951219512195
+deepseek-ai-deepseek-coder-1.3b-instruct_temp=0.5_stage=generation_step_2_constraints.eval_harness_gens
+    "pass@1": 0.75
+deepseek-ai-deepseek-coder-1.3b-instruct_temp=1.0_stage=generation_step_2_constraints.eval_harness_gens
+    "pass@1": 0.676829268292683
+deepseek-ai-deepseek-coder-6.7b-instruct_temp=0.0_stage=generation_step_2_constraints.eval_harness_gens
+deepseek-ai-deepseek-coder-6.7b-instruct_temp=0.5_stage=generation_step_2_constraints.eval_harness_gens
+Binary file docker_tmp.txt matches
+deepseek-ai-deepseek-coder-6.7b-instruct_temp=1.0_stage=generation_step_2_constraints.eval_harness_gens
+Binary file docker_tmp.txt matches

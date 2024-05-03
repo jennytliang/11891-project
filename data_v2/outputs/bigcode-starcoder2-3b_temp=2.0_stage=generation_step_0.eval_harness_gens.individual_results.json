@@ -1,80 +1,5 @@
-Selected Tasks: ['humanevalplus']
-evaluation only mode
-Downloading readme:   0% 0.00/551 [00:00<?, ?B/s]Downloading readme: 100% 551/551 [00:00<00:00, 6.38MB/s]
-Downloading data:   0% 0.00/2.90M [00:00<?, ?B/s]Downloading data: 100% 2.90M/2.90M [00:03<00:00, 810kB/s]Downloading data: 100% 2.90M/2.90M [00:03<00:00, 808kB/s]
-Generating test split:   0% 0/164 [00:00<?, ? examples/s]Generating test split: 100% 164/164 [00:00<00:00, 5311.46 examples/s]
-generations loaded, 164 selected from 164 with 1 candidates
-Evaluating generations...
 {
   "humanevalplus": {
-    "pass@1": 0.0
-  },
-  "config": {
-    "prefix": "",
-    "do_sample": true,
-    "temperature": 0.2,
-    "top_k": 0,
-    "top_p": 0.95,
-    "n_samples": 1,
-    "eos": "<|endoftext|>",
-    "seed": 0,
-    "model": "test_docker",
-    "modeltype": "causal",
-    "peft_model": null,
-    "revision": null,
-    "use_auth_token": false,
-    "trust_remote_code": false,
-    "tasks": "humanevalplus",
-    "instruction_tokens": null,
-    "batch_size": 1,
-    "max_length_generation": 512,
-    "precision": "fp32",
-    "load_in_8bit": false,
-    "load_in_4bit": false,
-    "left_padding": false,
-    "limit": null,
-    "limit_start": 0,
-    "save_every_k_tasks": -1,
-    "postprocess": true,
-    "allow_code_execution": true,
-    "generation_only": false,
-    "load_generations_path": "/app/generations_py.json",
-    "load_data_path": null,
-    "metric_output_path": "evaluation_results.json",
-    "save_generations": false,
-    "load_generations_intermediate_paths": null,
-    "save_generations_path": "generations.json",
-    "save_references": false,
-    "save_references_path": "references.json",
-    "prompt": "prompt",
-    "max_memory_per_gpu": null,
-    "check_references": false
-  }
-}
-{
-  "humanevalplus": {
-    "2": [
-      [
-        0,
-        {
-          "task_id": 2,
-          "passed": false,
-          "result": "failed: closing parenthesis ')' does not match opening parenthesis '{' (<string>, line 12)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "0": [
-      [
-        0,
-        {
-          "task_id": 0,
-          "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 12)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "1": [
       [
         0,
@@ -86,11 +11,44 @@ Evaluating generations...
         }
       ]
     ],
-    "4": [
+    "2": [
       [
         0,
         {
-          "task_id": 4,
+          "task_id": 2,
+          "passed": false,
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 14)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "12": [
+      [
+        0,
+        {
+          "task_id": 12,
+          "passed": false,
+          "result": "failed: unmatched ')' (<string>, line 14)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "9": [
+      [
+        0,
+        {
+          "task_id": 9,
+          "passed": false,
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 10)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "8": [
+      [
+        0,
+        {
+          "task_id": 8,
           "passed": false,
           "result": "failed: unterminated string literal (detected at line 13) (<string>, line 13)",
           "completion_id": 0
@@ -103,51 +61,18 @@ Evaluating generations...
         {
           "task_id": 3,
           "passed": false,
-          "result": "failed: unmatched ']' (<string>, line 13)",
+          "result": "failed: invalid syntax (<string>, line 13)",
           "completion_id": 0
         }
       ]
     ],
-    "10": [
+    "7": [
       [
         0,
         {
-          "task_id": 10,
+          "task_id": 7,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 20)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "9": [
-      [
-        0,
-        {
-          "task_id": 9,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 11)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "11": [
-      [
-        0,
-        {
-          "task_id": 11,
-          "passed": false,
-          "result": "failed: unexpected indent (<string>, line 11)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "8": [
-      [
-        0,
-        {
-          "task_id": 8,
-          "passed": false,
-          "result": "failed: source code string cannot contain null bytes",
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 11)",
           "completion_id": 0
         }
       ]
@@ -169,18 +94,18 @@ Evaluating generations...
         {
           "task_id": 5,
           "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 11)",
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 13)",
           "completion_id": 0
         }
       ]
     ],
-    "7": [
+    "4": [
       [
         0,
         {
-          "task_id": 7,
+          "task_id": 4,
           "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 11)",
+          "result": "failed: invalid syntax (<string>, line 13)",
           "completion_id": 0
         }
       ]
@@ -196,13 +121,13 @@ Evaluating generations...
         }
       ]
     ],
-    "12": [
+    "0": [
       [
         0,
         {
-          "task_id": 12,
+          "task_id": 0,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 15)",
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 12)",
           "completion_id": 0
         }
       ]
@@ -218,35 +143,68 @@ Evaluating generations...
         }
       ]
     ],
+    "11": [
+      [
+        0,
+        {
+          "task_id": 11,
+          "passed": false,
+          "result": "failed: unexpected indent (<string>, line 11)",
+          "completion_id": 0
+        }
+      ]
+    ],
     "15": [
       [
         0,
         {
           "task_id": 15,
           "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 10)",
+          "result": "failed: invalid syntax (<string>, line 11)",
           "completion_id": 0
         }
       ]
     ],
-    "17": [
+    "10": [
       [
         0,
         {
-          "task_id": 17,
+          "task_id": 10,
           "passed": false,
-          "result": "failed: unmatched ']' (<string>, line 17)",
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 20)",
           "completion_id": 0
         }
       ]
     ],
-    "18": [
+    "21": [
       [
         0,
         {
-          "task_id": 18,
+          "task_id": 21,
           "passed": false,
-          "result": "failed: invalid character '\u251c' (U+251C) (<string>, line 12)",
+          "result": "failed: inconsistent use of tabs and spaces in indentation (<string>, line 10)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "20": [
+      [
+        0,
+        {
+          "task_id": 20,
+          "passed": false,
+          "result": "failed: invalid character '\uff1b' (U+FF1B) (<string>, line 12)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "27": [
+      [
+        0,
+        {
+          "task_id": 27,
+          "passed": false,
+          "result": "failed: invalid character '\u3010' (U+3010) (<string>, line 11)",
           "completion_id": 0
         }
       ]
@@ -262,68 +220,13 @@ Evaluating generations...
         }
       ]
     ],
-    "20": [
-      [
-        0,
-        {
-          "task_id": 20,
-          "passed": false,
-          "result": "failed: unterminated triple-quoted string literal (detected at line 59) (<string>, line 18)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "22": [
-      [
-        0,
-        {
-          "task_id": 22,
-          "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 11)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "23": [
-      [
-        0,
-        {
-          "task_id": 23,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 11)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "19": [
-      [
-        0,
-        {
-          "task_id": 19,
-          "passed": false,
-          "result": "failed: closing parenthesis '}' does not match opening parenthesis '[' on line 12 (<string>, line 23)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "21": [
-      [
-        0,
-        {
-          "task_id": 21,
-          "passed": false,
-          "result": "failed: unmatched '}' (<string>, line 10)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "25": [
       [
         0,
         {
           "task_id": 25,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 17)",
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -334,7 +237,95 @@ Evaluating generations...
         {
           "task_id": 24,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 8)",
+          "result": "failed: unterminated string literal (detected at line 8) (<string>, line 8)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "22": [
+      [
+        0,
+        {
+          "task_id": 22,
+          "passed": false,
+          "result": "failed: unexpected indent (<string>, line 13)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "17": [
+      [
+        0,
+        {
+          "task_id": 17,
+          "passed": false,
+          "result": "failed: unmatched ']' (<string>, line 17)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "19": [
+      [
+        0,
+        {
+          "task_id": 19,
+          "passed": false,
+          "result": "failed: unterminated string literal (detected at line 11) (<string>, line 11)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "28": [
+      [
+        0,
+        {
+          "task_id": 28,
+          "passed": false,
+          "result": "failed: invalid syntax (<string>, line 12)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "29": [
+      [
+        0,
+        {
+          "task_id": 29,
+          "passed": false,
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 12)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "18": [
+      [
+        0,
+        {
+          "task_id": 18,
+          "passed": false,
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 12)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "23": [
+      [
+        0,
+        {
+          "task_id": 23,
+          "passed": false,
+          "result": "failed: unterminated string literal (detected at line 10) (<string>, line 10)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "26": [
+      [
+        0,
+        {
+          "task_id": 26,
+          "passed": false,
+          "result": "failed: invalid character '\u275b' (U+275B) (<string>, line 18)",
           "completion_id": 0
         }
       ]
@@ -350,35 +341,13 @@ Evaluating generations...
         }
       ]
     ],
-    "28": [
+    "32": [
       [
         0,
         {
-          "task_id": 28,
+          "task_id": 32,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 12)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "26": [
-      [
-        0,
-        {
-          "task_id": 26,
-          "passed": false,
-          "result": "failed: unterminated string literal (detected at line 10) (<string>, line 10)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "27": [
-      [
-        0,
-        {
-          "task_id": 27,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 11)",
+          "result": "failed: invalid non-printable character U+00A0 (<string>, line 24)",
           "completion_id": 0
         }
       ]
@@ -389,40 +358,7 @@ Evaluating generations...
         {
           "task_id": 31,
           "passed": false,
-          "result": "failed: unterminated string literal (detected at line 20) (<string>, line 20)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "29": [
-      [
-        0,
-        {
-          "task_id": 29,
-          "passed": false,
-          "result": "failed: closing parenthesis ')' does not match opening parenthesis '{' (<string>, line 11)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "33": [
-      [
-        0,
-        {
-          "task_id": 33,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 15)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "32": [
-      [
-        0,
-        {
-          "task_id": 32,
-          "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 24)",
+          "result": "failed: closing parenthesis ']' does not match opening parenthesis '{' (<string>, line 20)",
           "completion_id": 0
         }
       ]
@@ -438,79 +374,35 @@ Evaluating generations...
         }
       ]
     ],
-    "36": [
-      [
-        0,
-        {
-          "task_id": 36,
-          "passed": false,
-          "result": "failed: (unicode error) 'unicodeescape' codec can't decode bytes in position 1641-1642: truncated \\UXXXXXXXX escape (<string>, line 12)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "34": [
       [
         0,
         {
           "task_id": 34,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 9)",
+          "result": "failed: invalid character '\uff1a' (U+FF1A) (<string>, line 9)",
           "completion_id": 0
         }
       ]
     ],
-    "37": [
+    "36": [
       [
         0,
         {
-          "task_id": 37,
+          "task_id": 36,
           "passed": false,
-          "result": "failed: invalid character '\uff09' (U+FF09) (<string>, line 23)",
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 12)",
           "completion_id": 0
         }
       ]
     ],
-    "38": [
+    "33": [
       [
         0,
         {
-          "task_id": 38,
+          "task_id": 33,
           "passed": false,
-          "result": "failed: invalid syntax (<string>, line 18)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "40": [
-      [
-        0,
-        {
-          "task_id": 40,
-          "passed": false,
-          "result": "failed: source code string cannot contain null bytes",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "42": [
-      [
-        0,
-        {
-          "task_id": 42,
-          "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 10)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "39": [
-      [
-        0,
-        {
-          "task_id": 39,
-          "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 17)",
+          "result": "failed: closing parenthesis ']' does not match opening parenthesis '(' (<string>, line 12)",
           "completion_id": 0
         }
       ]
@@ -526,46 +418,57 @@ Evaluating generations...
         }
       ]
     ],
+    "39": [
+      [
+        0,
+        {
+          "task_id": 39,
+          "passed": false,
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 17)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "40": [
+      [
+        0,
+        {
+          "task_id": 40,
+          "passed": false,
+          "result": "failed: unterminated string literal (detected at line 20) (<string>, line 20)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "38": [
+      [
+        0,
+        {
+          "task_id": 38,
+          "passed": false,
+          "result": "failed: unterminated triple-quoted string literal (detected at line 58) (<string>, line 19)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "42": [
+      [
+        0,
+        {
+          "task_id": 42,
+          "passed": false,
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 10)",
+          "completion_id": 0
+        }
+      ]
+    ],
     "44": [
       [
         0,
         {
           "task_id": 44,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 14)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "46": [
-      [
-        0,
-        {
-          "task_id": 46,
-          "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 18)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "45": [
-      [
-        0,
-        {
-          "task_id": 45,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 8)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "47": [
-      [
-        0,
-        {
-          "task_id": 47,
-          "passed": false,
-          "result": "failed: unmatched '}' (<string>, line 10)",
+          "result": "failed: unterminated string literal (detected at line 14) (<string>, line 14)",
           "completion_id": 0
         }
       ]
@@ -581,13 +484,101 @@ Evaluating generations...
         }
       ]
     ],
+    "37": [
+      [
+        0,
+        {
+          "task_id": 37,
+          "passed": false,
+          "result": "failed: unterminated string literal (detected at line 26) (<string>, line 26)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "45": [
+      [
+        0,
+        {
+          "task_id": 45,
+          "passed": false,
+          "result": "failed: invalid non-printable character U+200B (<string>, line 8)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "46": [
+      [
+        0,
+        {
+          "task_id": 46,
+          "passed": false,
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 18)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "47": [
+      [
+        0,
+        {
+          "task_id": 47,
+          "passed": false,
+          "result": "failed: unmatched '}' (<string>, line 10)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "48": [
+      [
+        0,
+        {
+          "task_id": 48,
+          "passed": false,
+          "result": "failed: unterminated string literal (detected at line 17) (<string>, line 17)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "52": [
+      [
+        0,
+        {
+          "task_id": 52,
+          "passed": false,
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 10)",
+          "completion_id": 0
+        }
+      ]
+    ],
     "49": [
       [
         0,
         {
           "task_id": 49,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 16)",
+          "result": "failed: unmatched ']' (<string>, line 16)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "50": [
+      [
+        0,
+        {
+          "task_id": 50,
+          "passed": false,
+          "result": "failed: invalid syntax (<string>, line 14)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "54": [
+      [
+        0,
+        {
+          "task_id": 54,
+          "passed": false,
+          "result": "failed: invalid character '\u2019' (U+2019) (<string>, line 19)",
           "completion_id": 0
         }
       ]
@@ -603,68 +594,13 @@ Evaluating generations...
         }
       ]
     ],
-    "50": [
-      [
-        0,
-        {
-          "task_id": 50,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 16)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "48": [
-      [
-        0,
-        {
-          "task_id": 48,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 15)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "52": [
-      [
-        0,
-        {
-          "task_id": 52,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 12)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "54": [
-      [
-        0,
-        {
-          "task_id": 54,
-          "passed": false,
-          "result": "failed: invalid character '\uff0c' (U+FF0C) (<string>, line 20)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "53": [
-      [
-        0,
-        {
-          "task_id": 53,
-          "passed": false,
-          "result": "failed: unterminated string literal (detected at line 10) (<string>, line 10)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "55": [
       [
         0,
         {
           "task_id": 55,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 12)",
+          "result": "failed: invalid character '\u2208' (U+2208) (<string>, line 12)",
           "completion_id": 0
         }
       ]
@@ -675,18 +611,29 @@ Evaluating generations...
         {
           "task_id": 59,
           "passed": false,
-          "result": "failed: unterminated string literal (detected at line 10) (<string>, line 10)",
+          "result": "failed: unexpected indent (<string>, line 11)",
           "completion_id": 0
         }
       ]
     ],
-    "57": [
+    "53": [
       [
         0,
         {
-          "task_id": 57,
+          "task_id": 53,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 12)",
+          "result": "failed: invalid character '\u2501' (U+2501) (<string>, line 10)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "60": [
+      [
+        0,
+        {
+          "task_id": 60,
+          "passed": false,
+          "result": "failed: invalid syntax (<string>, line 16)",
           "completion_id": 0
         }
       ]
@@ -702,13 +649,46 @@ Evaluating generations...
         }
       ]
     ],
+    "61": [
+      [
+        0,
+        {
+          "task_id": 61,
+          "passed": false,
+          "result": "failed: closing parenthesis '}' does not match opening parenthesis '(' (<string>, line 16)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "57": [
+      [
+        0,
+        {
+          "task_id": 57,
+          "passed": false,
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 12)",
+          "completion_id": 0
+        }
+      ]
+    ],
     "58": [
       [
         0,
         {
           "task_id": 58,
           "passed": false,
-          "result": "failed: unterminated string literal (detected at line 12) (<string>, line 12)",
+          "result": "failed: unmatched '}' (<string>, line 11)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "62": [
+      [
+        0,
+        {
+          "task_id": 62,
+          "passed": false,
+          "result": "failed: unmatched '}' (<string>, line 12)",
           "completion_id": 0
         }
       ]
@@ -724,57 +704,24 @@ Evaluating generations...
         }
       ]
     ],
-    "61": [
-      [
-        0,
-        {
-          "task_id": 61,
-          "passed": false,
-          "result": "failed: invalid syntax (<string>, line 16)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "63": [
       [
         0,
         {
           "task_id": 63,
           "passed": false,
-          "result": "failed: invalid character '\u2591' (U+2591) (<string>, line 17)",
+          "result": "failed: invalid character '\u2591' (U+2591) (<string>, line 18)",
           "completion_id": 0
         }
       ]
     ],
-    "62": [
+    "65": [
       [
         0,
         {
-          "task_id": 62,
+          "task_id": 65,
           "passed": false,
-          "result": "failed: unterminated string literal (detected at line 12) (<string>, line 12)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "60": [
-      [
-        0,
-        {
-          "task_id": 60,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 16)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "66": [
-      [
-        0,
-        {
-          "task_id": 66,
-          "passed": false,
-          "result": "failed: invalid character '\u2026' (U+2026) (<string>, line 15)",
+          "result": "failed: unmatched ')' (<string>, line 11)",
           "completion_id": 0
         }
       ]
@@ -796,29 +743,18 @@ Evaluating generations...
         {
           "task_id": 67,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 15)",
+          "result": "failed: unexpected indent (<string>, line 16)",
           "completion_id": 0
         }
       ]
     ],
-    "65": [
+    "66": [
       [
         0,
         {
-          "task_id": 65,
+          "task_id": 66,
           "passed": false,
-          "result": "failed: unterminated string literal (detected at line 11) (<string>, line 11)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "69": [
-      [
-        0,
-        {
-          "task_id": 69,
-          "passed": false,
-          "result": "failed: unterminated string literal (detected at line 14) (<string>, line 14)",
+          "result": "failed: invalid character '\u2026' (U+2026) (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -829,18 +765,7 @@ Evaluating generations...
         {
           "task_id": 70,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 14)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "72": [
-      [
-        0,
-        {
-          "task_id": 72,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 20)",
+          "result": "failed: unterminated string literal (detected at line 13) (<string>, line 13)",
           "completion_id": 0
         }
       ]
@@ -851,7 +776,40 @@ Evaluating generations...
         {
           "task_id": 71,
           "passed": false,
-          "result": "failed: unexpected indent (<string>, line 15)",
+          "result": "failed: invalid syntax (<string>, line 13)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "72": [
+      [
+        0,
+        {
+          "task_id": 72,
+          "passed": false,
+          "result": "failed: unexpected indent (<string>, line 21)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "69": [
+      [
+        0,
+        {
+          "task_id": 69,
+          "passed": false,
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 13)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "74": [
+      [
+        0,
+        {
+          "task_id": 74,
+          "passed": false,
+          "result": "failed: invalid non-printable character U+E24D (<string>, line 16)",
           "completion_id": 0
         }
       ]
@@ -862,18 +820,18 @@ Evaluating generations...
         {
           "task_id": 73,
           "passed": false,
-          "result": "failed: unmatched ']' (<string>, line 13)",
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 13)",
           "completion_id": 0
         }
       ]
     ],
-    "77": [
+    "75": [
       [
         0,
         {
-          "task_id": 77,
+          "task_id": 75,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 15)",
+          "result": "failed: unterminated string literal (detected at line 10) (<string>, line 10)",
           "completion_id": 0
         }
       ]
@@ -889,28 +847,6 @@ Evaluating generations...
         }
       ]
     ],
-    "74": [
-      [
-        0,
-        {
-          "task_id": 74,
-          "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 16)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "75": [
-      [
-        0,
-        {
-          "task_id": 75,
-          "passed": false,
-          "result": "failed: unmatched '}' (<string>, line 10)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "78": [
       [
         0,
@@ -922,35 +858,13 @@ Evaluating generations...
         }
       ]
     ],
-    "79": [
+    "77": [
       [
         0,
         {
-          "task_id": 79,
+          "task_id": 77,
           "passed": false,
-          "result": "failed: unmatched ']' (<string>, line 14)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "80": [
-      [
-        0,
-        {
-          "task_id": 80,
-          "passed": false,
-          "result": "failed: invalid syntax (<string>, line 14)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "83": [
-      [
-        0,
-        {
-          "task_id": 83,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 8)",
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -966,35 +880,57 @@ Evaluating generations...
         }
       ]
     ],
+    "80": [
+      [
+        0,
+        {
+          "task_id": 80,
+          "passed": false,
+          "result": "failed: unmatched ')' (<string>, line 14)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "79": [
+      [
+        0,
+        {
+          "task_id": 79,
+          "passed": false,
+          "result": "failed: unterminated string literal (detected at line 15) (<string>, line 15)",
+          "completion_id": 0
+        }
+      ]
+    ],
     "82": [
       [
         0,
         {
           "task_id": 82,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 11)",
+          "result": "failed: unterminated string literal (detected at line 11) (<string>, line 11)",
           "completion_id": 0
         }
       ]
     ],
-    "85": [
+    "83": [
       [
         0,
         {
-          "task_id": 85,
+          "task_id": 83,
           "passed": false,
-          "result": "failed: unmatched ']' (<string>, line 9)",
+          "result": "failed: invalid syntax (<string>, line 7)",
           "completion_id": 0
         }
       ]
     ],
-    "84": [
+    "87": [
       [
         0,
         {
-          "task_id": 84,
+          "task_id": 87,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 18)",
+          "result": "failed: unmatched '}' (<string>, line 22)",
           "completion_id": 0
         }
       ]
@@ -1010,35 +946,24 @@ Evaluating generations...
         }
       ]
     ],
-    "87": [
+    "85": [
       [
         0,
         {
-          "task_id": 87,
+          "task_id": 85,
           "passed": false,
-          "result": "failed: unexpected indent (<string>, line 23)",
+          "result": "failed: unmatched ']' (<string>, line 11)",
           "completion_id": 0
         }
       ]
     ],
-    "88": [
+    "84": [
       [
         0,
         {
-          "task_id": 88,
+          "task_id": 84,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 18)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "89": [
-      [
-        0,
-        {
-          "task_id": 89,
-          "passed": false,
-          "result": "failed: unmatched '}' (<string>, line 13)",
+          "result": "failed: unmatched ')' (<string>, line 18)",
           "completion_id": 0
         }
       ]
@@ -1054,46 +979,24 @@ Evaluating generations...
         }
       ]
     ],
-    "94": [
+    "89": [
       [
         0,
         {
-          "task_id": 94,
+          "task_id": 89,
           "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 15)",
+          "result": "failed: unmatched '}' (<string>, line 13)",
           "completion_id": 0
         }
       ]
     ],
-    "93": [
+    "88": [
       [
         0,
         {
-          "task_id": 93,
+          "task_id": 88,
           "passed": false,
-          "result": "failed: unterminated string literal (detected at line 16) (<string>, line 16)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "95": [
-      [
-        0,
-        {
-          "task_id": 95,
-          "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 14)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "92": [
-      [
-        0,
-        {
-          "task_id": 92,
-          "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 20)",
+          "result": "failed: invalid character '\u300c' (U+300C) (<string>, line 17)",
           "completion_id": 0
         }
       ]
@@ -1104,18 +1007,18 @@ Evaluating generations...
         {
           "task_id": 91,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 14)",
+          "result": "failed: unmatched ')' (<string>, line 14)",
           "completion_id": 0
         }
       ]
     ],
-    "97": [
+    "92": [
       [
         0,
         {
-          "task_id": 97,
+          "task_id": 92,
           "passed": false,
-          "result": "failed: unterminated triple-quoted string literal (detected at line 62) (<string>, line 12)",
+          "result": "failed: unexpected indent (<string>, line 21)",
           "completion_id": 0
         }
       ]
@@ -1126,7 +1029,62 @@ Evaluating generations...
         {
           "task_id": 96,
           "passed": false,
-          "result": "failed: closing parenthesis '}' does not match opening parenthesis '[' (<string>, line 14)",
+          "result": "failed: unmatched ')' (<string>, line 13)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "94": [
+      [
+        0,
+        {
+          "task_id": 94,
+          "passed": false,
+          "result": "failed: unexpected indent (<string>, line 16)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "95": [
+      [
+        0,
+        {
+          "task_id": 95,
+          "passed": false,
+          "result": "failed: unterminated string literal (detected at line 14) (<string>, line 14)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "93": [
+      [
+        0,
+        {
+          "task_id": 93,
+          "passed": false,
+          "result": "failed: invalid syntax (<string>, line 16)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "99": [
+      [
+        0,
+        {
+          "task_id": 99,
+          "passed": false,
+          "result": "failed: unmatched '}' (<string>, line 23)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "97": [
+      [
+        0,
+        {
+          "task_id": 97,
+          "passed": false,
+          "result": "failed: unterminated triple-quoted string literal (detected at line 57) (<string>, line 12)",
           "completion_id": 0
         }
       ]
@@ -1142,24 +1100,13 @@ Evaluating generations...
         }
       ]
     ],
-    "100": [
-      [
-        0,
-        {
-          "task_id": 100,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 16)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "101": [
       [
         0,
         {
           "task_id": 101,
           "passed": false,
-          "result": "failed: invalid syntax (<string>, line 11)",
+          "result": "failed: unmatched ']' (<string>, line 12)",
           "completion_id": 0
         }
       ]
@@ -1170,29 +1117,18 @@ Evaluating generations...
         {
           "task_id": 102,
           "passed": false,
-          "result": "failed: invalid character '\u2192' (U+2192) (<string>, line 11)",
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 11)",
           "completion_id": 0
         }
       ]
     ],
-    "99": [
+    "100": [
       [
         0,
         {
-          "task_id": 99,
+          "task_id": 100,
           "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 20)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "103": [
-      [
-        0,
-        {
-          "task_id": 103,
-          "passed": false,
-          "result": "failed: closing parenthesis ')' does not match opening parenthesis '[' (<string>, line 15)",
+          "result": "failed: unexpected indent (<string>, line 17)",
           "completion_id": 0
         }
       ]
@@ -1203,7 +1139,29 @@ Evaluating generations...
         {
           "task_id": 104,
           "passed": false,
-          "result": "failed: unterminated string literal (detected at line 15) (<string>, line 15)",
+          "result": "failed: unexpected indent (<string>, line 15)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "105": [
+      [
+        0,
+        {
+          "task_id": 105,
+          "passed": false,
+          "result": "failed: unterminated string literal (detected at line 24) (<string>, line 24)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "103": [
+      [
+        0,
+        {
+          "task_id": 103,
+          "passed": false,
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 13)",
           "completion_id": 0
         }
       ]
@@ -1219,24 +1177,13 @@ Evaluating generations...
         }
       ]
     ],
-    "105": [
-      [
-        0,
-        {
-          "task_id": 105,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 24)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "107": [
       [
         0,
         {
           "task_id": 107,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 25)",
+          "result": "failed: unterminated string literal (detected at line 25) (<string>, line 25)",
           "completion_id": 0
         }
       ]
@@ -1247,7 +1194,7 @@ Evaluating generations...
         {
           "task_id": 108,
           "passed": false,
-          "result": "failed: invalid character '\u2705' (U+2705) (<string>, line 12)",
+          "result": "failed: invalid syntax (<string>, line 12)",
           "completion_id": 0
         }
       ]
@@ -1258,7 +1205,7 @@ Evaluating generations...
         {
           "task_id": 110,
           "passed": false,
-          "result": "failed: unmatched '}' (<string>, line 15)",
+          "result": "failed: invalid character '\u00bf' (U+00BF) (<string>, line 16)",
           "completion_id": 0
         }
       ]
@@ -1269,7 +1216,7 @@ Evaluating generations...
         {
           "task_id": 111,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 15)",
+          "result": "failed: unterminated string literal (detected at line 16) (<string>, line 16)",
           "completion_id": 0
         }
       ]
@@ -1285,24 +1232,35 @@ Evaluating generations...
         }
       ]
     ],
-    "112": [
-      [
-        0,
-        {
-          "task_id": 112,
-          "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 13)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "113": [
       [
         0,
         {
           "task_id": 113,
           "passed": false,
-          "result": "failed: closing parenthesis ']' does not match opening parenthesis '{' (<string>, line 14)",
+          "result": "failed: unterminated string literal (detected at line 14) (<string>, line 14)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "112": [
+      [
+        0,
+        {
+          "task_id": 112,
+          "passed": false,
+          "result": "failed: unexpected indent (<string>, line 15)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "118": [
+      [
+        0,
+        {
+          "task_id": 118,
+          "passed": false,
+          "result": "failed: unterminated string literal (detected at line 17) (<string>, line 17)",
           "completion_id": 0
         }
       ]
@@ -1314,17 +1272,6 @@ Evaluating generations...
           "task_id": 114,
           "passed": false,
           "result": "failed: source code string cannot contain null bytes",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "115": [
-      [
-        0,
-        {
-          "task_id": 115,
-          "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 37)",
           "completion_id": 0
         }
       ]
@@ -1346,18 +1293,7 @@ Evaluating generations...
         {
           "task_id": 117,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 15)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "118": [
-      [
-        0,
-        {
-          "task_id": 118,
-          "passed": false,
-          "result": "failed: invalid non-printable character U+E6C4 (<string>, line 18)",
+          "result": "failed: unmatched ')' (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -1368,7 +1304,7 @@ Evaluating generations...
         {
           "task_id": 119,
           "passed": false,
-          "result": "failed: unmatched ']' (<string>, line 17)",
+          "result": "failed: unmatched ')' (<string>, line 17)",
           "completion_id": 0
         }
       ]
@@ -1379,18 +1315,7 @@ Evaluating generations...
         {
           "task_id": 120,
           "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 27)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "122": [
-      [
-        0,
-        {
-          "task_id": 122,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 16)",
+          "result": "failed: unexpected indent (<string>, line 28)",
           "completion_id": 0
         }
       ]
@@ -1401,18 +1326,29 @@ Evaluating generations...
         {
           "task_id": 121,
           "passed": false,
-          "result": "failed: closing parenthesis '}' does not match opening parenthesis '[' (<string>, line 17)",
+          "result": "failed: invalid syntax (<string>, line 11)",
           "completion_id": 0
         }
       ]
     ],
-    "124": [
+    "115": [
       [
         0,
         {
-          "task_id": 124,
+          "task_id": 115,
           "passed": false,
-          "result": "failed: closing parenthesis ']' does not match opening parenthesis '(' (<string>, line 22)",
+          "result": "failed: unterminated string literal (detected at line 37) (<string>, line 37)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "122": [
+      [
+        0,
+        {
+          "task_id": 122,
+          "passed": false,
+          "result": "failed: unmatched '}' (<string>, line 16)",
           "completion_id": 0
         }
       ]
@@ -1428,6 +1364,28 @@ Evaluating generations...
         }
       ]
     ],
+    "124": [
+      [
+        0,
+        {
+          "task_id": 124,
+          "passed": false,
+          "result": "failed: unmatched ')' (<string>, line 22)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "125": [
+      [
+        0,
+        {
+          "task_id": 125,
+          "passed": false,
+          "result": "failed: unmatched '}' (<string>, line 12)",
+          "completion_id": 0
+        }
+      ]
+    ],
     "123": [
       [
         0,
@@ -1439,13 +1397,13 @@ Evaluating generations...
         }
       ]
     ],
-    "125": [
+    "129": [
       [
         0,
         {
-          "task_id": 125,
+          "task_id": 129,
           "passed": false,
-          "result": "failed: closing parenthesis ']' does not match opening parenthesis '{' (<string>, line 12)",
+          "result": "failed: unmatched '}' (<string>, line 32)",
           "completion_id": 0
         }
       ]
@@ -1456,7 +1414,7 @@ Evaluating generations...
         {
           "task_id": 127,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 22)",
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 22)",
           "completion_id": 0
         }
       ]
@@ -1467,18 +1425,7 @@ Evaluating generations...
         {
           "task_id": 128,
           "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 14)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "129": [
-      [
-        0,
-        {
-          "task_id": 129,
-          "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 32)",
+          "result": "failed: closing parenthesis ']' does not match opening parenthesis '(' (<string>, line 14)",
           "completion_id": 0
         }
       ]
@@ -1489,7 +1436,7 @@ Evaluating generations...
         {
           "task_id": 130,
           "passed": false,
-          "result": "failed: unterminated string literal (detected at line 19) (<string>, line 19)",
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 21)",
           "completion_id": 0
         }
       ]
@@ -1500,7 +1447,7 @@ Evaluating generations...
         {
           "task_id": 131,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 11)",
+          "result": "failed: invalid character '\u00d7' (U+00D7) (<string>, line 11)",
           "completion_id": 0
         }
       ]
@@ -1511,7 +1458,7 @@ Evaluating generations...
         {
           "task_id": 132,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 15)",
+          "result": "failed: invalid syntax (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -1527,6 +1474,17 @@ Evaluating generations...
         }
       ]
     ],
+    "135": [
+      [
+        0,
+        {
+          "task_id": 135,
+          "passed": false,
+          "result": "failed: invalid syntax (<string>, line 12)",
+          "completion_id": 0
+        }
+      ]
+    ],
     "134": [
       [
         0,
@@ -1538,13 +1496,13 @@ Evaluating generations...
         }
       ]
     ],
-    "135": [
+    "136": [
       [
         0,
         {
-          "task_id": 135,
+          "task_id": 136,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 12)",
+          "result": "failed: invalid character '\u258d' (U+258D) (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -1560,35 +1518,13 @@ Evaluating generations...
         }
       ]
     ],
-    "137": [
-      [
-        0,
-        {
-          "task_id": 137,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 14)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "136": [
-      [
-        0,
-        {
-          "task_id": 136,
-          "passed": false,
-          "result": "failed: unterminated string literal (detected at line 14) (<string>, line 14)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "140": [
       [
         0,
         {
           "task_id": 140,
           "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 13)",
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -1599,18 +1535,18 @@ Evaluating generations...
         {
           "task_id": 139,
           "passed": false,
-          "result": "failed: unindent does not match any outer indentation level (<string>, line 14)",
+          "result": "failed: invalid syntax. Perhaps you forgot a comma? (<string>, line 14)",
           "completion_id": 0
         }
       ]
     ],
-    "142": [
+    "137": [
       [
         0,
         {
-          "task_id": 142,
+          "task_id": 137,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 17)",
+          "result": "failed: unmatched ')' (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -1626,24 +1562,35 @@ Evaluating generations...
         }
       ]
     ],
-    "144": [
-      [
-        0,
-        {
-          "task_id": 144,
-          "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 14)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "141": [
       [
         0,
         {
           "task_id": 141,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 16)",
+          "result": "failed: unmatched ']' (<string>, line 16)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "142": [
+      [
+        0,
+        {
+          "task_id": 142,
+          "passed": false,
+          "result": "failed: closing parenthesis ')' does not match opening parenthesis '{' on line 15 (<string>, line 16)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "144": [
+      [
+        0,
+        {
+          "task_id": 144,
+          "passed": false,
+          "result": "failed: unexpected indent (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -1654,7 +1601,18 @@ Evaluating generations...
         {
           "task_id": 145,
           "passed": false,
-          "result": "failed: closing parenthesis ']' does not match opening parenthesis '(' (<string>, line 13)",
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 15)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "148": [
+      [
+        0,
+        {
+          "task_id": 148,
+          "passed": false,
+          "result": "failed: closing parenthesis '}' does not match opening parenthesis '[' (<string>, line 18)",
           "completion_id": 0
         }
       ]
@@ -1665,7 +1623,7 @@ Evaluating generations...
         {
           "task_id": 146,
           "passed": false,
-          "result": "failed: closing parenthesis ')' does not match opening parenthesis '[' (<string>, line 10)",
+          "result": "failed: closing parenthesis '}' does not match opening parenthesis '(' (<string>, line 10)",
           "completion_id": 0
         }
       ]
@@ -1681,35 +1639,24 @@ Evaluating generations...
         }
       ]
     ],
-    "148": [
-      [
-        0,
-        {
-          "task_id": 148,
-          "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 18)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "149": [
       [
         0,
         {
           "task_id": 149,
           "passed": false,
-          "result": "failed: invalid syntax (<string>, line 17)",
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 17)",
           "completion_id": 0
         }
       ]
     ],
-    "151": [
+    "153": [
       [
         0,
         {
-          "task_id": 151,
+          "task_id": 153,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 14)",
+          "result": "failed: unexpected indent (<string>, line 21)",
           "completion_id": 0
         }
       ]
@@ -1725,35 +1672,13 @@ Evaluating generations...
         }
       ]
     ],
-    "153": [
+    "151": [
       [
         0,
         {
-          "task_id": 153,
+          "task_id": 151,
           "passed": false,
-          "result": "failed: unterminated string literal (detected at line 20) (<string>, line 20)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "155": [
-      [
-        0,
-        {
-          "task_id": 155,
-          "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 9)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "154": [
-      [
-        0,
-        {
-          "task_id": 154,
-          "passed": false,
-          "result": "failed: unterminated string literal (detected at line 14) (<string>, line 14)",
+          "result": "failed: invalid character '\u2502' (U+2502) (<string>, line 14)",
           "completion_id": 0
         }
       ]
@@ -1764,29 +1689,7 @@ Evaluating generations...
         {
           "task_id": 152,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 17)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "159": [
-      [
-        0,
-        {
-          "task_id": 159,
-          "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 31)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "158": [
-      [
-        0,
-        {
-          "task_id": 158,
-          "passed": false,
-          "result": "failed: invalid character '\u2550' (U+2550) (<string>, line 12)",
+          "result": "failed: unmatched ')' (<string>, line 19)",
           "completion_id": 0
         }
       ]
@@ -1802,13 +1705,57 @@ Evaluating generations...
         }
       ]
     ],
+    "155": [
+      [
+        0,
+        {
+          "task_id": 155,
+          "passed": false,
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 11)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "154": [
+      [
+        0,
+        {
+          "task_id": 154,
+          "passed": false,
+          "result": "failed: unmatched ')' (<string>, line 12)",
+          "completion_id": 0
+        }
+      ]
+    ],
     "156": [
       [
         0,
         {
           "task_id": 156,
           "passed": false,
-          "result": "failed: unmatched ')' (<string>, line 13)",
+          "result": "failed: invalid syntax (<string>, line 13)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "158": [
+      [
+        0,
+        {
+          "task_id": 158,
+          "passed": false,
+          "result": "failed: invalid character '\u2550' (U+2550) (<string>, line 13)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "159": [
+      [
+        0,
+        {
+          "task_id": 159,
+          "passed": false,
+          "result": "failed: unindent does not match any outer indentation level (<string>, line 32)",
           "completion_id": 0
         }
       ]
@@ -1824,13 +1771,13 @@ Evaluating generations...
         }
       ]
     ],
-    "161": [
+    "163": [
       [
         0,
         {
-          "task_id": 161,
+          "task_id": 163,
           "passed": false,
-          "result": "failed: invalid non-printable character U+00A0 (<string>, line 13)",
+          "result": "failed: unterminated string literal (detected at line 12) (<string>, line 12)",
           "completion_id": 0
         }
       ]
@@ -1841,22 +1788,21 @@ Evaluating generations...
         {
           "task_id": 162,
           "passed": false,
-          "result": "failed: unterminated string literal (detected at line 9) (<string>, line 9)",
+          "result": "failed: invalid non-printable character U+00A0 (<string>, line 9)",
           "completion_id": 0
         }
       ]
     ],
-    "163": [
+    "161": [
       [
         0,
         {
-          "task_id": 163,
+          "task_id": 161,
           "passed": false,
-          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 12)",
+          "result": "failed: invalid character '\ufffd' (U+FFFD) (<string>, line 14)",
           "completion_id": 0
         }
       ]
     ]
   }
 }
-/app
