@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=code-llama-baseline # Job name
+#SBATCH --job-name=starcoder-baseline # Job name
 #SBATCH --gres=gpu:A6000:1               # Request GPU resources
 #SBATCH --time=8:00:00             # Time limit hrs:min:sec
 
