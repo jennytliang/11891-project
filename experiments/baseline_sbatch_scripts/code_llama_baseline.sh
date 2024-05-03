@@ -14,7 +14,7 @@ for model in "${models[@]}"
 do
     for temperature in "${temperatures[@]}"
     do
-        python3 experiment_with_constraints.py --data-dir=$datadir --model-name=$model --temperature=$temperature
+        python3 baseline_no_interaction.py --data-dir=$datadir --model-name=$model --temperature=$temperature
         python3 convert_gen_dict_to_eval_harness.py --data-dir=$datadir --model-name=$model --temperature=$temperature --key-in-dict=generation_step_0 
         python3 evaluate_gens.py --data-dir=$datadir --model-name=$model --temperature=$temperature --key-in-dict=generation_step_0 
     done
