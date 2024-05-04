@@ -8,7 +8,7 @@ conda activate code_gen
 
 # Run your Python script
 model="codellama/CodeLlama-7b-Python-hf"
-interaction_step=1
+interaction_step=2
 temperature=0.0
 datadir=../data_v2/
 upweight=1.05
