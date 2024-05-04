@@ -320,8 +320,6 @@ if __name__ == "__main__":
         sampling_params = SamplingParams(temperature=args.temperature, max_tokens=500, logits_processors=[logit_processor])
         output = model.generate([prefix], sampling_params)
 
-        import ipdb; ipdb.set_trace()
-
         task_id = task_ids_not_already_passed[i]
         output_dict[task_id][f"generation_step_{args.interaction_step}"] = output[0].outputs[0].text
 

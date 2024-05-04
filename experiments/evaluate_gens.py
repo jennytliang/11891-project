@@ -64,6 +64,10 @@ if __name__ == "__main__":
         phase = ''
     elif args.phase == 'exp':
         phase = '_constraints'
+    elif args.phase == 'exp_finalreport':
+        phase = '_constraints_1.05_0.95'
+    else:
+        raise NotImplementedError('')
 
     if args.interaction_step == 0:
         input_filename = os.path.join(
