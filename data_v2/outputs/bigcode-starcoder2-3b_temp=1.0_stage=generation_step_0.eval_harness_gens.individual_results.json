@@ -1,27 +1,5 @@
 {
   "humanevalplus": {
-    "5": [
-      [
-        0,
-        {
-          "task_id": 5,
-          "passed": false,
-          "result": "failed: inconsistent use of tabs and spaces in indentation (<string>, line 11)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "3": [
-      [
-        0,
-        {
-          "task_id": 3,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
     "0": [
       [
         0,
@@ -44,13 +22,46 @@
         }
       ]
     ],
-    "6": [
+    "14": [
       [
         0,
         {
-          "task_id": 6,
+          "task_id": 14,
           "passed": false,
-          "result": "failed: invalid syntax (<string>, line 12)",
+          "result": "failed: invalid syntax (<string>, line 9)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "3": [
+      [
+        0,
+        {
+          "task_id": 3,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "13": [
+      [
+        0,
+        {
+          "task_id": 13,
+          "passed": false,
+          "result": "failed: invalid non-printable character U+00A0 (<string>, line 43)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "15": [
+      [
+        0,
+        {
+          "task_id": 15,
+          "passed": false,
+          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -77,24 +88,35 @@
         }
       ]
     ],
-    "10": [
+    "5": [
       [
         0,
         {
-          "task_id": 10,
+          "task_id": 5,
           "passed": false,
-          "result": "failed: name 'reverse' is not defined",
+          "result": "failed: inconsistent use of tabs and spaces in indentation (<string>, line 11)",
           "completion_id": 0
         }
       ]
     ],
-    "14": [
+    "11": [
       [
         0,
         {
-          "task_id": 14,
+          "task_id": 11,
           "passed": false,
-          "result": "failed: invalid syntax (<string>, line 9)",
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "6": [
+      [
+        0,
+        {
+          "task_id": 6,
+          "passed": false,
+          "result": "failed: invalid syntax (<string>, line 12)",
           "completion_id": 0
         }
       ]
@@ -110,13 +132,13 @@
         }
       ]
     ],
-    "15": [
+    "10": [
       [
         0,
         {
-          "task_id": 15,
+          "task_id": 10,
           "passed": false,
-          "result": "failed: ",
+          "result": "failed: name 'reverse' is not defined",
           "completion_id": 0
         }
       ]
@@ -143,17 +165,6 @@
         }
       ]
     ],
-    "13": [
-      [
-        0,
-        {
-          "task_id": 13,
-          "passed": false,
-          "result": "failed: invalid non-printable character U+00A0 (<string>, line 43)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "16": [
       [
         0,
@@ -176,13 +187,13 @@
         }
       ]
     ],
-    "11": [
+    "17": [
       [
         0,
         {
-          "task_id": 11,
+          "task_id": 17,
           "passed": false,
-          "result": "failed: ",
+          "result": "failed: closing parenthesis ')' does not match opening parenthesis '{' on line 35 (<string>, line 39)",
           "completion_id": 0
         }
       ]
@@ -220,24 +231,13 @@
         }
       ]
     ],
-    "17": [
+    "25": [
       [
         0,
         {
-          "task_id": 17,
+          "task_id": 25,
           "passed": false,
-          "result": "failed: closing parenthesis ')' does not match opening parenthesis '{' on line 35 (<string>, line 39)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "22": [
-      [
-        0,
-        {
-          "task_id": 22,
-          "passed": false,
-          "result": "failed: invalid syntax (<string>, line 14)",
+          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -264,24 +264,13 @@
         }
       ]
     ],
-    "25": [
+    "22": [
       [
         0,
         {
-          "task_id": 25,
+          "task_id": 22,
           "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "26": [
-      [
-        0,
-        {
-          "task_id": 26,
-          "passed": false,
-          "result": "failed: inconsistent use of tabs and spaces in indentation (<string>, line 11)",
+          "result": "failed: invalid syntax (<string>, line 14)",
           "completion_id": 0
         }
       ]
@@ -304,6 +293,17 @@
           "task_id": 27,
           "passed": false,
           "result": "failed: invalid decimal literal (<string>, line 9)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "26": [
+      [
+        0,
+        {
+          "task_id": 26,
+          "passed": false,
+          "result": "failed: inconsistent use of tabs and spaces in indentation (<string>, line 11)",
           "completion_id": 0
         }
       ]
@@ -352,17 +352,6 @@
         }
       ]
     ],
-    "36": [
-      [
-        0,
-        {
-          "task_id": 36,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
     "33": [
       [
         0,
@@ -385,13 +374,13 @@
         }
       ]
     ],
-    "37": [
+    "36": [
       [
         0,
         {
-          "task_id": 37,
+          "task_id": 36,
           "passed": false,
-          "result": "failed: invalid syntax (<string>, line 12)",
+          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -407,13 +396,13 @@
         }
       ]
     ],
-    "38": [
+    "37": [
       [
         0,
         {
-          "task_id": 38,
+          "task_id": 37,
           "passed": false,
-          "result": "failed: ",
+          "result": "failed: invalid syntax (<string>, line 12)",
           "completion_id": 0
         }
       ]
@@ -423,6 +412,17 @@
         0,
         {
           "task_id": 35,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "38": [
+      [
+        0,
+        {
+          "task_id": 38,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -440,17 +440,6 @@
         }
       ]
     ],
-    "34": [
-      [
-        0,
-        {
-          "task_id": 34,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
     "43": [
       [
         0,
@@ -462,11 +451,11 @@
         }
       ]
     ],
-    "40": [
+    "34": [
       [
         0,
         {
-          "task_id": 40,
+          "task_id": 34,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -495,6 +484,17 @@
         }
       ]
     ],
+    "40": [
+      [
+        0,
+        {
+          "task_id": 40,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
     "45": [
       [
         0,
@@ -502,17 +502,6 @@
           "task_id": 45,
           "passed": false,
           "result": "failed: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "50": [
-      [
-        0,
-        {
-          "task_id": 50,
-          "passed": false,
-          "result": "failed: invalid syntax (<string>, line 16)",
           "completion_id": 0
         }
       ]
@@ -528,6 +517,28 @@
         }
       ]
     ],
+    "49": [
+      [
+        0,
+        {
+          "task_id": 49,
+          "passed": false,
+          "result": "failed: name 'x' is not defined",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "50": [
+      [
+        0,
+        {
+          "task_id": 50,
+          "passed": false,
+          "result": "failed: invalid syntax (<string>, line 16)",
+          "completion_id": 0
+        }
+      ]
+    ],
     "42": [
       [
         0,
@@ -539,13 +550,13 @@
         }
       ]
     ],
-    "49": [
+    "52": [
       [
         0,
         {
-          "task_id": 49,
+          "task_id": 52,
           "passed": false,
-          "result": "failed: name 'x' is not defined",
+          "result": "failed: invalid decimal literal (<string>, line 10)",
           "completion_id": 0
         }
       ]
@@ -572,22 +583,22 @@
         }
       ]
     ],
-    "52": [
-      [
-        0,
-        {
-          "task_id": 52,
-          "passed": false,
-          "result": "failed: invalid decimal literal (<string>, line 10)",
-          "completion_id": 0
-        }
-      ]
-    ],
     "47": [
       [
         0,
         {
           "task_id": 47,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "54": [
+      [
+        0,
+        {
+          "task_id": 54,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -616,11 +627,11 @@
         }
       ]
     ],
-    "54": [
+    "59": [
       [
         0,
         {
-          "task_id": 54,
+          "task_id": 59,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -649,22 +660,22 @@
         }
       ]
     ],
-    "59": [
+    "61": [
       [
         0,
         {
-          "task_id": 59,
+          "task_id": 61,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
         }
       ]
     ],
-    "61": [
+    "63": [
       [
         0,
         {
-          "task_id": 61,
+          "task_id": 63,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -693,33 +704,11 @@
         }
       ]
     ],
-    "63": [
-      [
-        0,
-        {
-          "task_id": 63,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
     "65": [
       [
         0,
         {
           "task_id": 65,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "66": [
-      [
-        0,
-        {
-          "task_id": 66,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -737,13 +726,13 @@
         }
       ]
     ],
-    "69": [
+    "66": [
       [
         0,
         {
-          "task_id": 69,
+          "task_id": 66,
           "passed": false,
-          "result": "failed: invalid syntax (<string>, line 15)",
+          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -755,6 +744,17 @@
           "task_id": 62,
           "passed": false,
           "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "69": [
+      [
+        0,
+        {
+          "task_id": 69,
+          "passed": false,
+          "result": "failed: invalid syntax (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -781,6 +781,17 @@
         }
       ]
     ],
+    "72": [
+      [
+        0,
+        {
+          "task_id": 72,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
     "73": [
       [
         0,
@@ -792,11 +803,11 @@
         }
       ]
     ],
-    "72": [
+    "70": [
       [
         0,
         {
-          "task_id": 72,
+          "task_id": 70,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -825,22 +836,22 @@
         }
       ]
     ],
-    "70": [
+    "76": [
       [
         0,
         {
-          "task_id": 70,
+          "task_id": 76,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
         }
       ]
     ],
-    "76": [
+    "78": [
       [
         0,
         {
-          "task_id": 76,
+          "task_id": 78,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -869,28 +880,6 @@
         }
       ]
     ],
-    "78": [
-      [
-        0,
-        {
-          "task_id": 78,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "83": [
-      [
-        0,
-        {
-          "task_id": 83,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
     "82": [
       [
         0,
@@ -913,6 +902,17 @@
         }
       ]
     ],
+    "86": [
+      [
+        0,
+        {
+          "task_id": 86,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
     "84": [
       [
         0,
@@ -924,11 +924,22 @@
         }
       ]
     ],
-    "86": [
+    "83": [
       [
         0,
         {
-          "task_id": 86,
+          "task_id": 83,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "85": [
+      [
+        0,
+        {
+          "task_id": 85,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -957,24 +968,13 @@
         }
       ]
     ],
-    "85": [
+    "91": [
       [
         0,
         {
-          "task_id": 85,
+          "task_id": 91,
           "passed": false,
           "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "89": [
-      [
-        0,
-        {
-          "task_id": 89,
-          "passed": false,
-          "result": "failed: name 'string' is not defined",
           "completion_id": 0
         }
       ]
@@ -990,35 +990,13 @@
         }
       ]
     ],
-    "91": [
+    "89": [
       [
         0,
         {
-          "task_id": 91,
+          "task_id": 89,
           "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "94": [
-      [
-        0,
-        {
-          "task_id": 94,
-          "passed": false,
-          "result": "failed: invalid syntax (<string>, line 15)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "95": [
-      [
-        0,
-        {
-          "task_id": 95,
-          "passed": false,
-          "result": "failed: inconsistent use of tabs and spaces in indentation (<string>, line 14)",
+          "result": "failed: name 'string' is not defined",
           "completion_id": 0
         }
       ]
@@ -1034,6 +1012,17 @@
         }
       ]
     ],
+    "95": [
+      [
+        0,
+        {
+          "task_id": 95,
+          "passed": false,
+          "result": "failed: inconsistent use of tabs and spaces in indentation (<string>, line 14)",
+          "completion_id": 0
+        }
+      ]
+    ],
     "90": [
       [
         0,
@@ -1041,6 +1030,17 @@
           "task_id": 90,
           "passed": false,
           "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "94": [
+      [
+        0,
+        {
+          "task_id": 94,
+          "passed": false,
+          "result": "failed: invalid syntax (<string>, line 15)",
           "completion_id": 0
         }
       ]
@@ -1067,17 +1067,6 @@
         }
       ]
     ],
-    "99": [
-      [
-        0,
-        {
-          "task_id": 99,
-          "passed": false,
-          "result": "failed: unsupported operand type(s) for -: 'str' and 'str'",
-          "completion_id": 0
-        }
-      ]
-    ],
     "98": [
       [
         0,
@@ -1089,11 +1078,33 @@
         }
       ]
     ],
+    "99": [
+      [
+        0,
+        {
+          "task_id": 99,
+          "passed": false,
+          "result": "failed: unsupported operand type(s) for -: 'str' and 'str'",
+          "completion_id": 0
+        }
+      ]
+    ],
     "100": [
       [
         0,
         {
           "task_id": 100,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "101": [
+      [
+        0,
+        {
+          "task_id": 101,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1122,11 +1133,11 @@
         }
       ]
     ],
-    "101": [
+    "106": [
       [
         0,
         {
-          "task_id": 101,
+          "task_id": 106,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1140,17 +1151,6 @@
           "task_id": 107,
           "passed": false,
           "result": "failed: invalid syntax (<string>, line 25)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "106": [
-      [
-        0,
-        {
-          "task_id": 106,
-          "passed": false,
-          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -1171,6 +1171,17 @@
         0,
         {
           "task_id": 96,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "105": [
+      [
+        0,
+        {
+          "task_id": 105,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1199,22 +1210,11 @@
         }
       ]
     ],
-    "105": [
+    "108": [
       [
         0,
         {
-          "task_id": 105,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "111": [
-      [
-        0,
-        {
-          "task_id": 111,
+          "task_id": 108,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1232,11 +1232,11 @@
         }
       ]
     ],
-    "108": [
+    "111": [
       [
         0,
         {
-          "task_id": 108,
+          "task_id": 111,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1287,33 +1287,11 @@
         }
       ]
     ],
-    "115": [
-      [
-        0,
-        {
-          "task_id": 115,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
     "113": [
       [
         0,
         {
           "task_id": 113,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "119": [
-      [
-        0,
-        {
-          "task_id": 119,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1331,11 +1309,22 @@
         }
       ]
     ],
-    "123": [
+    "115": [
       [
         0,
         {
-          "task_id": 123,
+          "task_id": 115,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "119": [
+      [
+        0,
+        {
+          "task_id": 119,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1347,6 +1336,17 @@
         0,
         {
           "task_id": 120,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "125": [
+      [
+        0,
+        {
+          "task_id": 125,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1375,22 +1375,22 @@
         }
       ]
     ],
-    "125": [
+    "128": [
       [
         0,
         {
-          "task_id": 125,
+          "task_id": 128,
           "passed": false,
-          "result": "failed: ",
+          "result": "failed: invalid decimal literal (<string>, line 14)",
           "completion_id": 0
         }
       ]
     ],
-    "122": [
+    "123": [
       [
         0,
         {
-          "task_id": 122,
+          "task_id": 123,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1408,22 +1408,11 @@
         }
       ]
     ],
-    "128": [
+    "122": [
       [
         0,
         {
-          "task_id": 128,
-          "passed": false,
-          "result": "failed: invalid decimal literal (<string>, line 14)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "126": [
-      [
-        0,
-        {
-          "task_id": 126,
+          "task_id": 122,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1441,11 +1430,11 @@
         }
       ]
     ],
-    "132": [
+    "126": [
       [
         0,
         {
-          "task_id": 132,
+          "task_id": 126,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1463,33 +1452,22 @@
         }
       ]
     ],
+    "132": [
+      [
+        0,
+        {
+          "task_id": 132,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
     "134": [
       [
         0,
         {
           "task_id": 134,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "135": [
-      [
-        0,
-        {
-          "task_id": 135,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "138": [
-      [
-        0,
-        {
-          "task_id": 138,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1507,11 +1485,11 @@
         }
       ]
     ],
-    "137": [
+    "135": [
       [
         0,
         {
-          "task_id": 137,
+          "task_id": 135,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1529,22 +1507,11 @@
         }
       ]
     ],
-    "141": [
+    "138": [
       [
         0,
         {
-          "task_id": 141,
-          "passed": false,
-          "result": "failed: ",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "136": [
-      [
-        0,
-        {
-          "task_id": 136,
+          "task_id": 138,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1562,6 +1529,17 @@
         }
       ]
     ],
+    "137": [
+      [
+        0,
+        {
+          "task_id": 137,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
     "143": [
       [
         0,
@@ -1569,6 +1547,17 @@
           "task_id": 143,
           "passed": false,
           "result": "failed: invalid syntax (<string>, line 22)",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "136": [
+      [
+        0,
+        {
+          "task_id": 136,
+          "passed": false,
+          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -1584,6 +1573,17 @@
         }
       ]
     ],
+    "141": [
+      [
+        0,
+        {
+          "task_id": 141,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
     "147": [
       [
         0,
@@ -1591,17 +1591,6 @@
           "task_id": 147,
           "passed": false,
           "result": "failed: invalid decimal literal (<string>, line 16)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "142": [
-      [
-        0,
-        {
-          "task_id": 142,
-          "passed": false,
-          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -1628,22 +1617,22 @@
         }
       ]
     ],
-    "150": [
+    "142": [
       [
         0,
         {
-          "task_id": 150,
+          "task_id": 142,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
         }
       ]
     ],
-    "149": [
+    "150": [
       [
         0,
         {
-          "task_id": 149,
+          "task_id": 150,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1661,11 +1650,22 @@
         }
       ]
     ],
-    "153": [
+    "145": [
       [
         0,
         {
-          "task_id": 153,
+          "task_id": 145,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "149": [
+      [
+        0,
+        {
+          "task_id": 149,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1677,6 +1677,17 @@
         0,
         {
           "task_id": 155,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "153": [
+      [
+        0,
+        {
+          "task_id": 153,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1705,22 +1716,22 @@
         }
       ]
     ],
-    "145": [
+    "151": [
       [
         0,
         {
-          "task_id": 145,
+          "task_id": 151,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
         }
       ]
     ],
-    "151": [
+    "157": [
       [
         0,
         {
-          "task_id": 151,
+          "task_id": 157,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1734,17 +1745,6 @@
           "task_id": 159,
           "passed": false,
           "result": "failed: unmatched '}' (<string>, line 36)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "157": [
-      [
-        0,
-        {
-          "task_id": 157,
-          "passed": false,
-          "result": "failed: ",
           "completion_id": 0
         }
       ]

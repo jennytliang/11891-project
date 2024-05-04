@@ -41,7 +41,7 @@ deepseek-ai-deepseek-coder-6.7b-instruct_temp=3.0_stage=generation_step_0.eval_h
 bigcode-starcoder2-15b_temp=0.0_stage=generation_step_0.eval_harness_gens
     "pass@1": 0.006097560975609756
 bigcode-starcoder2-15b_temp=0.5_stage=generation_step_0.eval_harness_gens
-Binary file docker_tmp.txt matches
+    "pass@1": 0.006097560975609756
 bigcode-starcoder2-15b_temp=1.0_stage=generation_step_0.eval_harness_gens
     "pass@1": 0.012195121951219513
 bigcode-starcoder2-15b_temp=2.0_stage=generation_step_0.eval_harness_gens
@@ -53,7 +53,7 @@ bigcode-starcoder2-3b_temp=0.0_stage=generation_step_0.eval_harness_gens
 bigcode-starcoder2-3b_temp=0.5_stage=generation_step_0.eval_harness_gens
     "pass@1": 0.03048780487804878
 bigcode-starcoder2-3b_temp=1.0_stage=generation_step_0.eval_harness_gens
-Binary file docker_tmp.txt matches
+    "pass@1": 0.006097560975609756
 bigcode-starcoder2-3b_temp=2.0_stage=generation_step_0.eval_harness_gens
     "pass@1": 0.0
 bigcode-starcoder2-3b_temp=3.0_stage=generation_step_0.eval_harness_gens
