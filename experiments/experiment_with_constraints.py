@@ -49,8 +49,7 @@ def get_interaction(generation: str, solution: str, tokenizer, interaction_max_l
                 break
 
             if tag == 'delete':
-                for tok in generation_tok[i1:i2]:
-                    deleted_tokens.append(tok)
+                deleted_tokens.extend(generation_tok[i1:i2])
     else:
         deleted_tokens = None
 
@@ -299,7 +298,9 @@ if __name__ == "__main__":
             )
 
             interaction_tok = tokenizer.encode(interaction_str)[1:] # removes bos
-            deleted_tokens_tok = tokenizer.encode(deleted_tokens)[1:] # removes bos
+            deleted_tokens_tok = []
+            for deleted_token in deleted_tokens:
+                deleted_tokens_tok.extend(tokenizer.encode(deleted_token)[1:]) # removes bos
             interaction_tokens_list.append(interaction_tok)
             deleted_tokens_list.append(deleted_tokens_tok)
         else:
