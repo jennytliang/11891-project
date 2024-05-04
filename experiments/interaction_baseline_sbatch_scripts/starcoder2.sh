@@ -8,7 +8,7 @@ conda activate code_gen
 
 # Run your Python script
 datadir=../data_v2/
-step=1
+step=2
 models=("bigcode/starcoder2-3b" "bigcode/starcoder2-7b" "bigcode/starcoder2-15b")
 temperatures=("0.0" "0.5" "1.0" "2.0" "3.0")
 for model in "${models[@]}"
