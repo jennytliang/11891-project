@@ -2,9 +2,11 @@
 #
 
 step=$1
+upweight=$2
+downweight=$3
 outfile=docker_tmp.txt
 
-for file in *step_"$step"_constraints.eval_harness_gens;
+for file in *step_"$step"_constraints_"$upweight"_"$downweight".eval_harness_gens;
 do
     if [ -f $file ]; then
         if ! [ -f $file.individual_results.json ]; then
@@ -17,8 +19,8 @@ do
             --n_samples 1 > $outfile
 
             awk 'p>2; /}/{++p}' $outfile | sed '$d' > $file.individual_results.json
-            echo $file >> step_"$step"_constraints_pass_at_one.txt
-            grep -w 'pass@1' $outfile >> step_"$step"_constraints_pass_at_one.txt
+            echo $file >> step_"$step"_constraints_"$upweight"_"$downweight"_pass_at_one.txt
+            grep -w 'pass@1' $outfile >> step_"$step"_constraints_"$upweight"_"$downweight"_pass_at_one.txt
         else
             echo "$file.individual_results.json already exists; skipping"
         fi
