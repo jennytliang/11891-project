@@ -48,7 +48,7 @@ def get_interaction(generation: str, solution: str, tokenizer, interaction_max_l
             if j2 > intervention_end:
                 break
 
-            if tag == 'delete':
+            if tag == 'delete' or tag == 'replace':
                 deleted_tokens.extend(generation_tok[i1:i2])
     else:
         deleted_tokens = None
