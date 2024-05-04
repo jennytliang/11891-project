@@ -38,3 +38,31 @@ deepseek-ai-deepseek-coder-6.7b-instruct_temp=2.0_stage=generation_step_2.eval_h
     "pass@1": 0.13414634146341464
 deepseek-ai-deepseek-coder-6.7b-instruct_temp=3.0_stage=generation_step_2.eval_harness_gens
     "pass@1": 0.018292682926829267
+bigcode-starcoder2-15b_temp=0.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.7926829268292683
+bigcode-starcoder2-15b_temp=0.5_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.725609756097561
+bigcode-starcoder2-15b_temp=1.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.6097560975609756
+bigcode-starcoder2-15b_temp=2.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.036585365853658534
+bigcode-starcoder2-3b_temp=0.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.6463414634146342
+bigcode-starcoder2-3b_temp=0.5_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.6036585365853658
+bigcode-starcoder2-3b_temp=1.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.45121951219512196
+bigcode-starcoder2-3b_temp=2.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.036585365853658534
+bigcode-starcoder2-3b_temp=3.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.006097560975609756
+bigcode-starcoder2-7b_temp=0.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.6524390243902439
+bigcode-starcoder2-7b_temp=0.5_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.6219512195121951
+bigcode-starcoder2-7b_temp=1.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.5121951219512195
+bigcode-starcoder2-7b_temp=2.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.03048780487804878
+bigcode-starcoder2-7b_temp=3.0_stage=generation_step_2.eval_harness_gens
+    "pass@1": 0.006097560975609756
