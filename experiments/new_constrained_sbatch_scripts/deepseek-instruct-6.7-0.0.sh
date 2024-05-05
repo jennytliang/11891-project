@@ -8,7 +8,7 @@ conda activate code_gen
 
 # Run your Python script
 model="deepseek-ai/deepseek-coder-6.7b-instruct"
-interaction_step=3
+interaction_step=4
 temperature=0.0
 datadir=../data_v2/
 upweight=1.05
