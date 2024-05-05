@@ -1,74 +1,32 @@
-Selected Tasks: ['humanevalplus']
-evaluation only mode
-Downloading readme:   0% 0.00/551 [00:00<?, ?B/s]Downloading readme: 100% 551/551 [00:00<00:00, 1.60MB/s]
-Downloading data:   0% 0.00/2.90M [00:00<?, ?B/s]Downloading data: 100% 2.90M/2.90M [00:00<00:00, 4.88MB/s]Downloading data: 100% 2.90M/2.90M [00:00<00:00, 4.83MB/s]
-Generating test split:   0% 0/164 [00:00<?, ? examples/s]Generating test split: 100% 164/164 [00:00<00:00, 5008.05 examples/s]
-generations loaded, 164 selected from 164 with 1 candidates
-Evaluating generations...
 {
   "humanevalplus": {
-    "pass@1": 0.9085365853658537
-  },
-  "config": {
-    "prefix": "",
-    "do_sample": true,
-    "temperature": 0.2,
-    "top_k": 0,
-    "top_p": 0.95,
-    "n_samples": 1,
-    "eos": "<|endoftext|>",
-    "seed": 0,
-    "model": "test_docker",
-    "modeltype": "causal",
-    "peft_model": null,
-    "revision": null,
-    "use_auth_token": false,
-    "trust_remote_code": false,
-    "tasks": "humanevalplus",
-    "instruction_tokens": null,
-    "batch_size": 1,
-    "max_length_generation": 512,
-    "precision": "fp32",
-    "load_in_8bit": false,
-    "load_in_4bit": false,
-    "left_padding": false,
-    "limit": null,
-    "limit_start": 0,
-    "save_every_k_tasks": -1,
-    "postprocess": true,
-    "allow_code_execution": true,
-    "generation_only": false,
-    "load_generations_path": "/app/generations_py.json",
-    "load_data_path": null,
-    "metric_output_path": "evaluation_results.json",
-    "save_generations": false,
-    "load_generations_intermediate_paths": null,
-    "save_generations_path": "generations.json",
-    "save_references": false,
-    "save_references_path": "references.json",
-    "prompt": "prompt",
-    "max_memory_per_gpu": null,
-    "check_references": false
-  }
-}
-{
-  "humanevalplus": {
-    "0": [
+    "2": [
       [
         0,
         {
-          "task_id": 0,
+          "task_id": 2,
           "passed": true,
           "result": "passed",
           "completion_id": 0
         }
       ]
     ],
-    "6": [
+    "4": [
       [
         0,
         {
-          "task_id": 6,
+          "task_id": 4,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "3": [
+      [
+        0,
+        {
+          "task_id": 3,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -86,6 +44,17 @@ Evaluating generations...
         }
       ]
     ],
+    "0": [
+      [
+        0,
+        {
+          "task_id": 0,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
     "7": [
       [
         0,
@@ -97,77 +66,11 @@ Evaluating generations...
         }
       ]
     ],
-    "9": [
+    "1": [
       [
         0,
         {
-          "task_id": 9,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "14": [
-      [
-        0,
-        {
-          "task_id": 14,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "10": [
-      [
-        0,
-        {
-          "task_id": 10,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "5": [
-      [
-        0,
-        {
-          "task_id": 5,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "13": [
-      [
-        0,
-        {
-          "task_id": 13,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "12": [
-      [
-        0,
-        {
-          "task_id": 12,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "2": [
-      [
-        0,
-        {
-          "task_id": 2,
+          "task_id": 1,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -207,17 +110,6 @@ Evaluating generations...
         }
       ]
     ],
-    "23": [
-      [
-        0,
-        {
-          "task_id": 23,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
     "18": [
       [
         0,
@@ -229,11 +121,11 @@ Evaluating generations...
         }
       ]
     ],
-    "25": [
+    "20": [
       [
         0,
         {
-          "task_id": 25,
+          "task_id": 20,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -251,11 +143,11 @@ Evaluating generations...
         }
       ]
     ],
-    "20": [
+    "23": [
       [
         0,
         {
-          "task_id": 20,
+          "task_id": 23,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -295,6 +187,17 @@ Evaluating generations...
         }
       ]
     ],
+    "25": [
+      [
+        0,
+        {
+          "task_id": 25,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
     "28": [
       [
         0,
@@ -317,22 +220,22 @@ Evaluating generations...
         }
       ]
     ],
-    "31": [
+    "30": [
       [
         0,
         {
-          "task_id": 31,
+          "task_id": 30,
           "passed": true,
           "result": "passed",
           "completion_id": 0
         }
       ]
     ],
-    "30": [
+    "31": [
       [
         0,
         {
-          "task_id": 30,
+          "task_id": 31,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -350,22 +253,11 @@ Evaluating generations...
         }
       ]
     ],
-    "35": [
+    "10": [
       [
         0,
         {
-          "task_id": 35,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "34": [
-      [
-        0,
-        {
-          "task_id": 34,
+          "task_id": 10,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -383,11 +275,22 @@ Evaluating generations...
         }
       ]
     ],
-    "39": [
+    "34": [
       [
         0,
         {
-          "task_id": 39,
+          "task_id": 34,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "35": [
+      [
+        0,
+        {
+          "task_id": 35,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -405,28 +308,6 @@ Evaluating generations...
         }
       ]
     ],
-    "41": [
-      [
-        0,
-        {
-          "task_id": 41,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "11": [
-      [
-        0,
-        {
-          "task_id": 11,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
     "38": [
       [
         0,
@@ -438,33 +319,22 @@ Evaluating generations...
         }
       ]
     ],
-    "1": [
+    "39": [
       [
         0,
         {
-          "task_id": 1,
+          "task_id": 39,
           "passed": true,
           "result": "passed",
           "completion_id": 0
         }
       ]
     ],
-    "4": [
+    "41": [
       [
         0,
         {
-          "task_id": 4,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "3": [
-      [
-        0,
-        {
-          "task_id": 3,
+          "task_id": 41,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -482,22 +352,22 @@ Evaluating generations...
         }
       ]
     ],
-    "44": [
+    "42": [
       [
         0,
         {
-          "task_id": 44,
+          "task_id": 42,
           "passed": true,
           "result": "passed",
           "completion_id": 0
         }
       ]
     ],
-    "42": [
+    "44": [
       [
         0,
         {
-          "task_id": 42,
+          "task_id": 44,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -537,11 +407,11 @@ Evaluating generations...
         }
       ]
     ],
-    "49": [
+    "47": [
       [
         0,
         {
-          "task_id": 49,
+          "task_id": 47,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -559,11 +429,11 @@ Evaluating generations...
         }
       ]
     ],
-    "47": [
+    "49": [
       [
         0,
         {
-          "task_id": 47,
+          "task_id": 49,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -647,33 +517,11 @@ Evaluating generations...
         }
       ]
     ],
-    "59": [
-      [
-        0,
-        {
-          "task_id": 59,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
     "57": [
       [
         0,
         {
           "task_id": 57,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "60": [
-      [
-        0,
-        {
-          "task_id": 60,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -691,33 +539,11 @@ Evaluating generations...
         }
       ]
     ],
-    "63": [
-      [
-        0,
-        {
-          "task_id": 63,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
     "61": [
       [
         0,
         {
           "task_id": 61,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "64": [
-      [
-        0,
-        {
-          "task_id": 64,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -735,22 +561,33 @@ Evaluating generations...
         }
       ]
     ],
-    "65": [
+    "63": [
       [
         0,
         {
-          "task_id": 65,
+          "task_id": 63,
           "passed": true,
           "result": "passed",
           "completion_id": 0
         }
       ]
     ],
-    "67": [
+    "64": [
       [
         0,
         {
-          "task_id": 67,
+          "task_id": 64,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "65": [
+      [
+        0,
+        {
+          "task_id": 65,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -768,11 +605,55 @@ Evaluating generations...
         }
       ]
     ],
+    "67": [
+      [
+        0,
+        {
+          "task_id": 67,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "60": [
+      [
+        0,
+        {
+          "task_id": 60,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
     "68": [
       [
         0,
         {
           "task_id": 68,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "36": [
+      [
+        0,
+        {
+          "task_id": 36,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "69": [
+      [
+        0,
+        {
+          "task_id": 69,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -801,33 +682,22 @@ Evaluating generations...
         }
       ]
     ],
+    "24": [
+      [
+        0,
+        {
+          "task_id": 24,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
     "72": [
       [
         0,
         {
           "task_id": 72,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "75": [
-      [
-        0,
-        {
-          "task_id": 75,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "69": [
-      [
-        0,
-        {
-          "task_id": 69,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -845,13 +715,24 @@ Evaluating generations...
         }
       ]
     ],
+    "75": [
+      [
+        0,
+        {
+          "task_id": 75,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
     "76": [
       [
         0,
         {
           "task_id": 76,
           "passed": false,
-          "result": "failed: invalid syntax (<string>, line 24)",
+          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -878,22 +759,22 @@ Evaluating generations...
         }
       ]
     ],
-    "79": [
+    "78": [
       [
         0,
         {
-          "task_id": 79,
+          "task_id": 78,
           "passed": true,
           "result": "passed",
           "completion_id": 0
         }
       ]
     ],
-    "78": [
+    "79": [
       [
         0,
         {
-          "task_id": 78,
+          "task_id": 79,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -933,17 +814,6 @@ Evaluating generations...
         }
       ]
     ],
-    "87": [
-      [
-        0,
-        {
-          "task_id": 87,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
     "85": [
       [
         0,
@@ -977,11 +847,11 @@ Evaluating generations...
         }
       ]
     ],
-    "88": [
+    "87": [
       [
         0,
         {
-          "task_id": 88,
+          "task_id": 87,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -993,8 +863,19 @@ Evaluating generations...
         0,
         {
           "task_id": 89,
-          "passed": false,
-          "result": "failed: ",
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "88": [
+      [
+        0,
+        {
+          "task_id": 88,
+          "passed": true,
+          "result": "passed",
           "completion_id": 0
         }
       ]
@@ -1087,22 +968,22 @@ Evaluating generations...
         }
       ]
     ],
-    "102": [
+    "101": [
       [
         0,
         {
-          "task_id": 102,
+          "task_id": 101,
           "passed": true,
           "result": "passed",
           "completion_id": 0
         }
       ]
     ],
-    "101": [
+    "102": [
       [
         0,
         {
-          "task_id": 101,
+          "task_id": 102,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1120,22 +1001,33 @@ Evaluating generations...
         }
       ]
     ],
-    "104": [
+    "96": [
       [
         0,
         {
-          "task_id": 104,
+          "task_id": 96,
           "passed": true,
           "result": "passed",
           "completion_id": 0
         }
       ]
     ],
-    "106": [
+    "100": [
       [
         0,
         {
-          "task_id": 106,
+          "task_id": 100,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "104": [
+      [
+        0,
+        {
+          "task_id": 104,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1153,22 +1045,33 @@ Evaluating generations...
         }
       ]
     ],
-    "107": [
+    "59": [
       [
         0,
         {
-          "task_id": 107,
+          "task_id": 59,
           "passed": true,
           "result": "passed",
           "completion_id": 0
         }
       ]
     ],
-    "109": [
+    "106": [
       [
         0,
         {
-          "task_id": 109,
+          "task_id": 106,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "107": [
+      [
+        0,
+        {
+          "task_id": 107,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1186,24 +1089,13 @@ Evaluating generations...
         }
       ]
     ],
-    "96": [
+    "109": [
       [
         0,
         {
-          "task_id": 96,
+          "task_id": 109,
           "passed": true,
           "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "111": [
-      [
-        0,
-        {
-          "task_id": 111,
-          "passed": false,
-          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -1219,11 +1111,11 @@ Evaluating generations...
         }
       ]
     ],
-    "100": [
+    "111": [
       [
         0,
         {
-          "task_id": 100,
+          "task_id": 111,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1296,22 +1188,33 @@ Evaluating generations...
         }
       ]
     ],
-    "119": [
+    "118": [
       [
         0,
         {
-          "task_id": 119,
+          "task_id": 118,
           "passed": true,
           "result": "passed",
           "completion_id": 0
         }
       ]
     ],
-    "118": [
+    "119": [
       [
         0,
         {
-          "task_id": 118,
+          "task_id": 119,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "120": [
+      [
+        0,
+        {
+          "task_id": 120,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1329,28 +1232,6 @@ Evaluating generations...
         }
       ]
     ],
-    "123": [
-      [
-        0,
-        {
-          "task_id": 123,
-          "passed": false,
-          "result": "failed: invalid syntax (<string>, line 25)",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "120": [
-      [
-        0,
-        {
-          "task_id": 120,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
     "122": [
       [
         0,
@@ -1362,11 +1243,11 @@ Evaluating generations...
         }
       ]
     ],
-    "36": [
+    "123": [
       [
         0,
         {
-          "task_id": 36,
+          "task_id": 123,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1395,22 +1276,22 @@ Evaluating generations...
         }
       ]
     ],
-    "127": [
-      [
-        0,
-        {
-          "task_id": 127,
-          "passed": false,
-          "result": "failed: local variable 'ends' referenced before assignment",
-          "completion_id": 0
-        }
-      ]
-    ],
     "126": [
       [
         0,
         {
           "task_id": 126,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "127": [
+      [
+        0,
+        {
+          "task_id": 127,
           "passed": false,
           "result": "failed: ",
           "completion_id": 0
@@ -1423,7 +1304,7 @@ Evaluating generations...
         {
           "task_id": 129,
           "passed": false,
-          "result": "failed: name 'minPathDP' is not defined",
+          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -1434,7 +1315,7 @@ Evaluating generations...
         {
           "task_id": 130,
           "passed": false,
-          "result": "failed: list index out of range",
+          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -1483,28 +1364,6 @@ Evaluating generations...
         }
       ]
     ],
-    "135": [
-      [
-        0,
-        {
-          "task_id": 135,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "24": [
-      [
-        0,
-        {
-          "task_id": 24,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
     "133": [
       [
         0,
@@ -1516,13 +1375,13 @@ Evaluating generations...
         }
       ]
     ],
-    "137": [
+    "135": [
       [
         0,
         {
-          "task_id": 137,
-          "passed": false,
-          "result": "failed: ",
+          "task_id": 135,
+          "passed": true,
+          "result": "passed",
           "completion_id": 0
         }
       ]
@@ -1532,6 +1391,17 @@ Evaluating generations...
         0,
         {
           "task_id": 136,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "137": [
+      [
+        0,
+        {
+          "task_id": 137,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1554,8 +1424,8 @@ Evaluating generations...
         0,
         {
           "task_id": 140,
-          "passed": false,
-          "result": "failed: ",
+          "passed": true,
+          "result": "passed",
           "completion_id": 0
         }
       ]
@@ -1565,6 +1435,17 @@ Evaluating generations...
         0,
         {
           "task_id": 141,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "142": [
+      [
+        0,
+        {
+          "task_id": 142,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1593,44 +1474,11 @@ Evaluating generations...
         }
       ]
     ],
-    "142": [
-      [
-        0,
-        {
-          "task_id": 142,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "147": [
-      [
-        0,
-        {
-          "task_id": 147,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
     "146": [
       [
         0,
         {
           "task_id": 146,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "148": [
-      [
-        0,
-        {
-          "task_id": 148,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1648,11 +1496,22 @@ Evaluating generations...
         }
       ]
     ],
-    "150": [
+    "147": [
       [
         0,
         {
-          "task_id": 150,
+          "task_id": 147,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "148": [
+      [
+        0,
+        {
+          "task_id": 148,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1670,11 +1529,33 @@ Evaluating generations...
         }
       ]
     ],
+    "150": [
+      [
+        0,
+        {
+          "task_id": 150,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
     "151": [
       [
         0,
         {
           "task_id": 151,
+          "passed": false,
+          "result": "failed: ",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "152": [
+      [
+        0,
+        {
+          "task_id": 152,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1692,13 +1573,13 @@ Evaluating generations...
         }
       ]
     ],
-    "152": [
+    "154": [
       [
         0,
         {
-          "task_id": 152,
-          "passed": true,
-          "result": "passed",
+          "task_id": 154,
+          "passed": false,
+          "result": "failed: ",
           "completion_id": 0
         }
       ]
@@ -1708,17 +1589,6 @@ Evaluating generations...
         0,
         {
           "task_id": 155,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
-    "154": [
-      [
-        0,
-        {
-          "task_id": 154,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1813,17 +1683,6 @@ Evaluating generations...
         }
       ]
     ],
-    "94": [
-      [
-        0,
-        {
-          "task_id": 94,
-          "passed": true,
-          "result": "passed",
-          "completion_id": 0
-        }
-      ]
-    ],
     "83": [
       [
         0,
@@ -1835,11 +1694,99 @@ Evaluating generations...
         }
       ]
     ],
+    "94": [
+      [
+        0,
+        {
+          "task_id": 94,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "6": [
+      [
+        0,
+        {
+          "task_id": 6,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "12": [
+      [
+        0,
+        {
+          "task_id": 12,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "13": [
+      [
+        0,
+        {
+          "task_id": 13,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
     "15": [
       [
         0,
         {
           "task_id": 15,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "11": [
+      [
+        0,
+        {
+          "task_id": 11,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "14": [
+      [
+        0,
+        {
+          "task_id": 14,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "9": [
+      [
+        0,
+        {
+          "task_id": 9,
+          "passed": true,
+          "result": "passed",
+          "completion_id": 0
+        }
+      ]
+    ],
+    "5": [
+      [
+        0,
+        {
+          "task_id": 5,
           "passed": true,
           "result": "passed",
           "completion_id": 0
@@ -1859,4 +1806,3 @@ Evaluating generations...
     ]
   }
 }
-/app
